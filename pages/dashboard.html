@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Franchisee Dashboard</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee dashboard user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h4 class="no-margin">Franchisee Dashboard</h4>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Your applications, urgent actions and progress at a glance.
+      </div>
+
+      <div class="mbot15 dashboard-actions">
+        <a href="application_detail.html" class="btn btn-primary">
+          <i class="fa fa-plus"></i> New Application
+        </a>
+        <a href="application_overview.html" class="btn btn-default">
+          <i class="fa fa-list"></i> View Applications
+        </a>
+        <a href="tasks.html" class="btn btn-default">
+          <i class="fa fa-check-square-o"></i> View All Tasks
+        </a>
+        <a href="support_tickets.html" class="btn btn-default">
+          <i class="fa fa-life-ring"></i> Support Tickets
+        </a>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="dash_date_range">Date Range</label>
+            <select class="form-control" id="dash_date_range">
+              <option>Last 7 Days</option>
+              <option selected>This Month</option>
+              <option>Last Month</option>
+              <option>This Year</option>
+              <option>Last Year</option>
+              <option>Custom Range</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="dash_consultant">Consultant</label>
+            <select class="form-control" id="dash_consultant">
+              <option value="">All consultants</option>
+              <option>Maria Schwan</option>
+              <option>Priya Naidoo</option>
+              <option>Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="dashboard-filter-actions">
+              <button type="button" class="btn btn-primary" id="dash_apply">Apply</button>
+              <button type="button" class="btn btn-default" id="dash_clear">Clear</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="text-right text-muted">01 Sep &ndash; 07 Sep 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Application Pipeline</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="application_overview.html" class="btn btn-default btn-sm">
+            <i class="fa fa-list"></i> View Applications
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="application_overview.html" class="dashboard-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted dashboard-pipeline-label">New Application</div>
+              <div class="dashboard-pipeline-count dashboard-stage-new">6</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="application_overview.html" class="dashboard-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted dashboard-pipeline-label">Incomplete</div>
+              <div class="dashboard-pipeline-count dashboard-stage-incomplete">4</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="application_overview.html" class="dashboard-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted dashboard-pipeline-label">Affordability Check</div>
+              <div class="dashboard-pipeline-count dashboard-stage-affordability">7</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="application_overview.html" class="dashboard-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted dashboard-pipeline-label">Submitted to Banks</div>
+              <div class="dashboard-pipeline-count dashboard-stage-submitted">3</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="application_overview.html" class="dashboard-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted dashboard-pipeline-label">Approved</div>
+              <div class="dashboard-pipeline-count dashboard-stage-approved">3</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="application_overview.html" class="dashboard-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted dashboard-pipeline-label">Declined</div>
+              <div class="dashboard-pipeline-count dashboard-stage-declined">1</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-muted dashboard-pipeline-note">
+        Joint applicants count individually. A linked joint transaction counts as one deal.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <a href="application_overview.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-exclamation-triangle dashboard-tile-icon dashboard-icon-orange"></i>
+          <div class="text-muted dashboard-tile-label">Missing Documents</div>
+          <div class="dashboard-tile-value">4</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="submit_to_bank.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-files-o dashboard-tile-icon dashboard-icon-orange"></i>
+          <div class="text-muted dashboard-tile-label">Stage 2 Missing Submission Docs</div>
+          <div class="dashboard-tile-value">2</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="affordability_overview.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-calculator dashboard-tile-icon dashboard-icon-blue"></i>
+          <div class="text-muted dashboard-tile-label">Affordability Reviews</div>
+          <div class="dashboard-tile-value">3</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="buyers_certificate_overview.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-certificate dashboard-tile-icon dashboard-icon-green"></i>
+          <div class="text-muted dashboard-tile-label">Certificates Expiring</div>
+          <div class="dashboard-tile-value">2</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <a href="buyers_certificate_overview.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-bell-o dashboard-tile-icon dashboard-icon-green"></i>
+          <div class="text-muted dashboard-tile-label">Overdue Certificate Follow-ups</div>
+          <div class="dashboard-tile-value">3</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="unsuccessful_outcome.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-times-circle-o dashboard-tile-icon dashboard-icon-red"></i>
+          <div class="text-muted dashboard-tile-label">Unsuccessful Outcomes</div>
+          <div class="dashboard-tile-value">1</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="application_overview.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-undo dashboard-tile-icon dashboard-icon-red"></i>
+          <div class="text-muted dashboard-tile-label">Returned for Correction</div>
+          <div class="dashboard-tile-value">2</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="bond_application.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-question-circle-o dashboard-tile-icon dashboard-icon-blue"></i>
+          <div class="text-muted dashboard-tile-label">Information Requests</div>
+          <div class="dashboard-tile-value">1</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <a href="tasks.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-clock-o dashboard-tile-icon dashboard-icon-red"></i>
+          <div class="text-muted dashboard-tile-label">Overdue Tasks</div>
+          <div class="dashboard-tile-value">3</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="tasks.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-envelope-o dashboard-tile-icon dashboard-icon-blue"></i>
+          <div class="text-muted dashboard-tile-label">Unread Alerts</div>
+          <div class="dashboard-tile-value">5</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="support_tickets.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-life-ring dashboard-tile-icon dashboard-icon-blue"></i>
+          <div class="text-muted dashboard-tile-label">Open Support Tickets</div>
+          <div class="dashboard-tile-value">2</div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <a href="documents.html" class="dashboard-tile-link-wrapper">
+        <div class="well well-sm dashboard-tile">
+          <i class="fa fa-hdd-o dashboard-tile-icon dashboard-icon-blue"></i>
+          <div class="text-muted dashboard-tile-label">Document Storage Usage</div>
+          <div class="dashboard-tile-value">4.2 GB / 10 GB</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Work Requiring Attention</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="application_overview.html" class="btn btn-default btn-sm">
+            <i class="fa fa-list"></i> View All
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Applicant / Deal</th>
+              <th>Type</th>
+              <th>Consultant</th>
+              <th>Current Status</th>
+              <th>Next Action</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Thandi Mokoena</strong><br><span class="text-muted">APP-2026-1058</span></td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td><span class="label label-warning">Missing Documents</span></td>
+              <td>Upload payslip</td>
+              <td><a href="application_detail.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Dlamini Property Purchase</strong><br><span class="text-muted">JD-2026-1049</span></td>
+              <td>Joint Deal &middot; 2 applicants</td>
+              <td>Priya Naidoo</td>
+              <td><span class="label label-info">Affordability Review</span></td>
+              <td>Review combined result</td>
+              <td><a href="joint_deal_detail.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Aisha Daniels</strong><br><span class="text-muted">APP-2026-1038</span></td>
+              <td>Individual</td>
+              <td>Neil Petersen</td>
+              <td><span class="label label-success">Certificate Expiring</span></td>
+              <td>Contact applicant</td>
+              <td><a href="buyers_certificate.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Peter Jacobs</strong><br><span class="text-muted">APP-2026-1044</span></td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td><span class="label label-info">Stage 2 Preparation</span></td>
+              <td>Complete documents</td>
+              <td><a href="submit_to_bank.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Nandi Mafele</strong><br><span class="text-muted">APP-2026-1002</span></td>
+              <td>Individual</td>
+              <td>Priya Naidoo</td>
+              <td><span class="label label-danger">Returned for Correction</span></td>
+              <td>Provide corrected information</td>
+              <td><a href="application_detail.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Khumalo Family Purchase</strong><br><span class="text-muted">JD-2026-0987</span></td>
+              <td>Joint Deal &middot; 4 applicants</td>
+              <td>Neil Petersen</td>
+              <td><span class="label label-warning">Further Information Requested</span></td>
+              <td>Respond to Head Office</td>
+              <td><a href="bond_application.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Corrections &amp; Information Requests</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Applicant / Deal</th>
+              <th>Request Type</th>
+              <th>Requested By</th>
+              <th>Requested</th>
+              <th>Due</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nandi Mafele</strong><br><span class="text-muted">APP-2026-1002</span></td>
+              <td><span class="label label-danger">Returned for Correction</span></td>
+              <td>Head Office Sales Support</td>
+              <td>05 Sep 2026</td>
+              <td><span class="text-danger">09 Sep 2026</span></td>
+              <td><a href="application_detail.html" class="btn btn-primary btn-xs">Respond</a></td>
+            </tr>
+            <tr>
+              <td><strong>Khumalo Family Purchase</strong><br><span class="text-muted">JD-2026-0987</span></td>
+              <td><span class="label label-warning">Further Information Requested</span></td>
+              <td>Standard Bank (via Head Office)</td>
+              <td>06 Sep 2026</td>
+              <td>10 Sep 2026</td>
+              <td><a href="bond_application.html" class="btn btn-primary btn-xs">Respond</a></td>
+            </tr>
+            <tr>
+              <td><strong>Mandla Khumalo</strong><br><span class="text-muted">BA-2026-0068</span></td>
+              <td><span class="label label-warning">Information Requested (ABSA)</span></td>
+              <td>ABSA (via Head Office)</td>
+              <td>07 Sep 2026</td>
+              <td>11 Sep 2026</td>
+              <td><a href="bond_application.html" class="btn btn-primary btn-xs">Provide Information</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-muted">
+        <small>Responses are sent to Head Office, not directly to the bank. Head Office reviews and forwards.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Latest Head Office &amp; Bank Updates</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Applicant / Deal</th>
+              <th>Latest Update</th>
+              <th>Source</th>
+              <th>Updated By</th>
+              <th>When</th>
+              <th>Next Follow-up</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mandla Khumalo</strong><br><span class="text-muted">BA-2026-0068</span></td>
+              <td>ABSA requested an updated payslip. Nedbank remains under assessment.</td>
+              <td>Head Office</td>
+              <td>Sarah Jacobs</td>
+              <td>07 Sep 2026</td>
+              <td>08 Sep 2026</td>
+              <td><a href="bond_application.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Khumalo Family Purchase</strong><br><span class="text-muted">JD-2026-0987</span></td>
+              <td>Standard Bank requested latest bank statements.</td>
+              <td>Standard Bank (via HO)</td>
+              <td>Head Office Sales Support</td>
+              <td>06 Sep 2026</td>
+              <td>10 Sep 2026</td>
+              <td><a href="bond_application.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Dlamini Property Purchase</strong><br><span class="text-muted">BA-2026-0178</span></td>
+              <td>FNB approval in principle received.</td>
+              <td>FNB (via HO)</td>
+              <td>Head Office Sales Support</td>
+              <td>05 Sep 2026</td>
+              <td>15 Sep 2026</td>
+              <td><a href="bond_application.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+            <tr>
+              <td><strong>Peter Jacobs</strong><br><span class="text-muted">BA-2026-0155</span></td>
+              <td>Submission to Head Office accepted. CRM Output PDF prepared.</td>
+              <td>Head Office</td>
+              <td>Sarah Jacobs</td>
+              <td>04 Sep 2026</td>
+              <td>11 Sep 2026</td>
+              <td><a href="submit_to_bank.html" class="btn btn-default btn-xs">Open</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Today's Tasks</h5>
+      <hr class="hr-panel-heading" />
+
+      <ul class="dashboard-tasks-list">
+        <li class="dashboard-task-row">
+          <span class="dashboard-task-icon dashboard-task-due"><i class="fa fa-check-circle"></i></span>
+          <span class="dashboard-task-text">
+            <a href="buyers_certificate.html">Contact Aisha Daniels &mdash; Buyer's Certificate follow-up</a>
+          </span>
+          <span class="dashboard-task-when text-muted">Due today</span>
+        </li>
+        <li class="dashboard-task-row">
+          <span class="dashboard-task-icon dashboard-task-due"><i class="fa fa-check-circle"></i></span>
+          <span class="dashboard-task-text">
+            <a href="joint_deal_detail.html">Review Dlamini joint affordability</a>
+          </span>
+          <span class="dashboard-task-when text-muted">Due today</span>
+        </li>
+        <li class="dashboard-task-row">
+          <span class="dashboard-task-icon dashboard-task-overdue"><i class="fa fa-exclamation-circle"></i></span>
+          <span class="dashboard-task-text">
+            <a href="application_detail.html">Upload Peter Jacobs documents</a>
+          </span>
+          <span class="dashboard-task-when text-danger">Overdue</span>
+        </li>
+        <li class="dashboard-task-row">
+          <span class="dashboard-task-icon dashboard-task-due"><i class="fa fa-check-circle"></i></span>
+          <span class="dashboard-task-text">
+            <a href="support_tickets.html">Reply to Support Ticket #184</a>
+          </span>
+          <span class="dashboard-task-when text-muted">Due today</span>
+        </li>
+        <li class="dashboard-task-row">
+          <span class="dashboard-task-icon dashboard-task-due"><i class="fa fa-check-circle"></i></span>
+          <span class="dashboard-task-text">
+            <a href="buyers_certificate.html">Contact applicant for certificate #BC-2026-0012</a>
+          </span>
+          <span class="dashboard-task-when text-muted">Due today</span>
+        </li>
+      </ul>
+
+      <div class="text-center dashboard-view-all-tasks">
+        <a href="tasks.html" class="btn btn-default btn-block">View All Tasks</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Recent Activity</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>When</th>
+              <th>Actor</th>
+              <th>Event</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>07 Sep 2026</td>
+              <td>Maria Schwan</td>
+              <td>Missing documents flagged for Thandi Mokoena</td>
+            </tr>
+            <tr>
+              <td>06 Sep 2026</td>
+              <td>Priya Naidoo</td>
+              <td>Combined affordability calculated for Dlamini Property Purchase</td>
+            </tr>
+            <tr>
+              <td>05 Sep 2026</td>
+              <td>Neil Petersen</td>
+              <td>Buyer's Certificate issued for Aisha Daniels</td>
+            </tr>
+            <tr>
+              <td>04 Sep 2026</td>
+              <td>Maria Schwan</td>
+              <td>Stage 2 preparation started for Peter Jacobs</td>
+            </tr>
+            <tr>
+              <td>03 Sep 2026</td>
+              <td>Head Office</td>
+              <td>Nandi Mafele returned for correction</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Only records belonging to your franchise are shown. Dashboard totals must match the Applications, Certificates, Tasks and Reports pages. Opening or viewing a dashboard item does not change its stage, status or ownership.
+  </div>
+
+</div></div></div>
+
+<style>
+.dashboard-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;align-items:center;}
+.dashboard-actions .btn{white-space:normal!important;float:none!important;max-width:100%!important;}
+.dashboard-filter-actions{display:flex;gap:10px;flex-wrap:wrap;}
+
+.dashboard-pipeline-card{display:block;text-decoration:none!important;color:inherit!important;}
+.dashboard-pipeline-card:hover .well{background:#f9fafb;}
+.dashboard-pipeline-card .well{margin-bottom:15px;background:#fff;transition:background .15s ease;}
+.dashboard-pipeline-label{font-size:12px;margin-bottom:8px;}
+.dashboard-pipeline-count{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;
+  font-weight:600;font-size:16px;color:#fff;
+}
+.dashboard-stage-new           {background:#1f2d3d;}
+.dashboard-stage-incomplete    {background:#2c8f9c;}
+.dashboard-stage-affordability {background:#2563eb;}
+.dashboard-stage-submitted     {background:#e08b1f;}
+.dashboard-stage-approved      {background:#1f9d55;}
+.dashboard-stage-declined      {background:#d92d20;}
+.dashboard-pipeline-note{margin-top:5px;font-size:12px;}
+
+.dashboard-tile-link-wrapper{display:block;text-decoration:none!important;color:inherit!important;}
+.dashboard-tile-link-wrapper:hover .dashboard-tile{background:#f9fafb;}
+.dashboard-tile{margin-bottom:15px;transition:background .15s ease;}
+.dashboard-tile-icon{font-size:20px;margin-bottom:6px;display:block;}
+.dashboard-icon-orange{color:#e08b1f;}
+.dashboard-icon-blue{color:#2563eb;}
+.dashboard-icon-green{color:#1f9d55;}
+.dashboard-icon-red{color:#d92d20;}
+.dashboard-tile-label{font-size:12px;margin-bottom:4px;}
+.dashboard-tile-value{font-size:22px;font-weight:600;color:#111827;}
+
+.dashboard-tasks-list{margin-bottom:0;padding-left:0;list-style:none;}
+.dashboard-task-row{display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:1px solid #f0f0f0;}
+.dashboard-task-row:last-child{border-bottom:0;}
+.dashboard-task-icon{flex:0 0 auto;margin-top:2px;}
+.dashboard-task-due{color:#1f9d55;}
+.dashboard-task-overdue{color:#d92d20;}
+.dashboard-task-text{flex:1 1 auto;font-size:13.5px;}
+.dashboard-task-text a{color:#2563eb;text-decoration:none;}
+.dashboard-task-text a:hover{text-decoration:underline;}
+.dashboard-task-when{flex:0 0 auto;font-size:12px;white-space:nowrap;}
+.dashboard-view-all-tasks{margin-top:15px;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .dashboard-filter-actions .btn{width:100%;}
+  .dashboard-tile-value{font-size:20px;}
+}
+</style>
+
+<script>
+(function(){
+  var rows       = document.querySelectorAll('.dashboard-attention-row');
+  var dateRange  = document.getElementById('dash_date_range');
+  var consultant = document.getElementById('dash_consultant');
+  var applyBtn   = document.getElementById('dash_apply');
+  var clearBtn   = document.getElementById('dash_clear');
+
+  function applyFilters(){
+    var c = consultant.value;
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var rowCons = row.getAttribute('data-consultant') || '';
+      if (!c || rowCons === c) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    }
+  }
+
+  applyBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    applyFilters();
+  });
+
+  clearBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    dateRange.value = 'This Month';
+    consultant.value = '';
+    applyFilters();
+  });
+})();
+</script>
+
+</body>
+
+</html>

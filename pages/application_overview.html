@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Applications</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee applications user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <!-- ============================== HEADER ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Applications</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <button type="button" class="btn btn-default">
+            <i class="fa fa-download"></i> Export List
+          </button>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Review and manage applications for your franchise.
+      </div>
+
+      <!-- ============================== FILTERS ============================== -->
+      <h5 class="bold">Search and filter applications</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="app_search">Search</label>
+            <input type="text" class="form-control" id="app_search" placeholder="Applicant, ID or reference">
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="app_consultant">Consultant</label>
+            <select class="form-control" id="app_consultant">
+              <option selected>All consultants</option>
+              <option>Maria Schwan</option>
+              <option>Priya Naidoo</option>
+              <option>Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="app_stage">Pipeline Stage</label>
+            <select class="form-control" id="app_stage">
+              <option selected>All stages</option>
+              <option>New Application</option>
+              <option>Incomplete</option>
+              <option>Affordability Check</option>
+              <option>Submitted to Banks</option>
+              <option>Approved</option>
+              <option>Declined</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="app_status">Working Status</label>
+            <select class="form-control" id="app_status">
+              <option selected>All statuses</option>
+              <option>Received</option>
+              <option>Consultant Review</option>
+              <option>Missing Information</option>
+              <option>Review Required</option>
+              <option>Affordability in Progress</option>
+              <option>Affordability Checked — Qualifies</option>
+              <option>Pre-Approval Ready</option>
+              <option>Stage 2 Preparation</option>
+              <option>Submitted to Head Office</option>
+              <option>Returned for Correction</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="applications-filter-actions">
+              <button type="button" class="btn btn-primary">Apply Filters</button>
+              <button type="button" class="btn btn-default">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="applications-filter-tags">
+        <span class="label label-default">Missing documents</span>
+        <span class="label label-default">Current attempts</span>
+        <span class="text-muted">24 applications</span>
+      </div>
+
+      <div class="applications-view-toggle text-right">
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-sm">Board</button>
+          <button type="button" class="btn btn-primary btn-sm active">List</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== PIPELINE COUNTS ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">New Application</div>
+              <div class="applications-pipeline-count applications-stage-new">6</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Incomplete</div>
+              <div class="applications-pipeline-count applications-stage-incomplete">4</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Affordability Check</div>
+              <div class="applications-pipeline-count applications-stage-affordability">7</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Submitted to Banks</div>
+              <div class="applications-pipeline-count applications-stage-submitted">3</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Approved</div>
+              <div class="applications-pipeline-count applications-stage-approved">3</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Declined</div>
+              <div class="applications-pipeline-count applications-stage-declined">1</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-muted applications-pipeline-note">
+        Working statuses explain the activity inside each stage and do not create extra pipeline columns.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== APPLICATIONS TABLE ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Application Records</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <span class="text-muted">
+            <input type="checkbox" id="app_select_all"> 0 selected
+          </span>
+          <button type="button" class="btn btn-default btn-sm" disabled>
+            <i class="fa fa-users"></i> Link to Joint Deal
+          </button>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped applications-table">
+          <thead>
+            <tr>
+              <th style="width:24px;"><input type="checkbox"></th>
+              <th>Applicant / Application</th>
+              <th>Consultant</th>
+              <th>Completeness</th>
+              <th>Experian</th>
+              <th>Affordability</th>
+              <th>Stage / Working Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Row 1 — Missing Documents -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Thandi Mokoena</strong><br>
+                <span class="text-muted">APP-2026-1058</span><br>
+                <small class="text-muted">Received 02 Sep 2026</small>
+              </td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-warning">6 of 8</span>
+              </td>
+              <td>654</td>
+              <td><span class="text-muted">Not calculated</span></td>
+              <td>
+                <span class="label label-danger">Incomplete</span><br>
+                <small class="text-muted">Missing Documents</small>
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary btn-xs">Open</button>
+              </td>
+            </tr>
+
+            <!-- Row 2 — Linked to a joint deal + Affordability Checked -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Silubuso Dlamini</strong><br>
+                <span class="text-muted">APP-2026-1049</span><br>
+                <small class="text-muted">Received 01 Sep 2026</small><br>
+                <small class="text-info"><i class="fa fa-link"></i> Linked to JD-2026-0048</small>
+              </td>
+              <td>Priya Naidoo</td>
+              <td>
+                <span class="label label-success">Complete</span>
+              </td>
+              <td>642</td>
+              <td>R1,450,000</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Affordability Checked — Qualifies</small>
+              </td>
+              <td>
+                <button type="button" class="btn btn-default btn-xs">View Deal</button>
+              </td>
+            </tr>
+
+            <!-- Row 3 — Review Required -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Aisha Daniels</strong><br>
+                <span class="text-muted">APP-2026-1038</span><br>
+                <small class="text-muted">Received 01 Sep 2026</small>
+              </td>
+              <td>Neil Petersen</td>
+              <td>
+                <span class="label label-warning">7 of 8</span>
+              </td>
+              <td>671</td>
+              <td><span class="text-muted">Review required</span></td>
+              <td>
+                <span class="label label-warning">Incomplete</span><br>
+                <small class="text-muted">Missing Documents</small>
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary btn-xs">Open</button>
+              </td>
+            </tr>
+
+            <!-- Row 4 — Submitted to Banks -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Mandla Khumalo</strong><br>
+                <span class="text-muted">APP-2026-1015</span><br>
+                <small class="text-muted">Received 31 Aug 2026</small>
+              </td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-success">Complete</span>
+              </td>
+              <td>655</td>
+              <td>R890,000</td>
+              <td>
+                <span class="label label-warning">Submitted to Banks</span><br>
+                <small class="text-muted">Awaiting Bank Feedback</small>
+              </td>
+              <td>
+                <button type="button" class="btn btn-default btn-xs">View</button>
+              </td>
+            </tr>
+
+            <!-- Row 5 — Approved -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Peter Jacobs</strong><br>
+                <span class="text-muted">APP-2026-1044</span><br>
+                <small class="text-muted">Received 30 Aug 2026</small><br>
+                <small class="text-warning">Attempt 2</small>
+              </td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-success">Complete</span>
+              </td>
+              <td>630</td>
+              <td>R720,000</td>
+              <td>
+                <span class="label label-success">Approved</span><br>
+                <small class="text-muted">Bond Accepted</small>
+              </td>
+              <td>
+                <button type="button" class="btn btn-default btn-xs">View</button>
+              </td>
+            </tr>
+
+            <!-- Row 6 — Returned for Correction -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Nandi Mafele</strong><br>
+                <span class="text-muted">APP-2026-1002</span><br>
+                <small class="text-muted">Received 28 Aug 2026</small>
+              </td>
+              <td>Priya Naidoo</td>
+              <td>
+                <span class="label label-success">Complete</span>
+              </td>
+              <td>688</td>
+              <td>R980,000</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Returned for Correction</small>
+              </td>
+              <td>
+                <button type="button" class="btn btn-primary btn-xs">Open</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row applications-pagination">
+        <div class="col-md-6">
+          <span class="text-muted">Showing 1–6 of 24</span>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">Previous</button>
+            <button type="button" class="btn btn-primary btn-sm active">1</button>
+            <button type="button" class="btn btn-default btn-sm">2</button>
+            <button type="button" class="btn btn-default btn-sm">3</button>
+            <button type="button" class="btn btn-default btn-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== INFO PANELS ============================== -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-info-circle text-info"></i> Application Rules</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="applications-rules-list">
+            <li>An individual applicant can have more than one application attempt.</li>
+            <li>ID or passport number identifies the person; each attempt keeps its own unique number.</li>
+            <li>Documents from an earlier attempt may be linked to the current application when permitted.</li>
+            <li>A genuine reapplication keeps the earlier attempt visible in history.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-users text-info"></i> Joint Deal Rules</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="applications-rules-list">
+            <li>Only completed same-franchise applications can be linked into a deal.</li>
+            <li>Each applicant keeps their own application and document history.</li>
+            <li>The linked joint deal owns one transaction for combined affordability and submission.</li>
+            <li>A deal must contain between two and four linked applicants.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== FOOTER NOTE ============================== -->
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Only records belonging to your franchise are shown. Only the six approved pipeline stages appear as columns; working statuses describe activity inside a stage.
+  </div>
+
+</div></div></div>
+
+<style>
+.applications-filter-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.applications-filter-tags{margin-top:5px;margin-bottom:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.applications-view-toggle{margin-top:-25px;}
+
+.applications-pipeline-card{display:block;text-decoration:none!important;color:inherit!important;}
+.applications-pipeline-card:hover .well{background:#f9fafb;}
+.applications-pipeline-card .well{margin-bottom:15px;background:#fff;transition:background .15s ease;}
+.applications-pipeline-label{font-size:12px;margin-bottom:8px;}
+.applications-pipeline-count{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;
+  font-weight:600;font-size:16px;color:#fff;
+}
+.applications-stage-new           {background:#1f2d3d;}
+.applications-stage-incomplete    {background:#2c8f9c;}
+.applications-stage-affordability {background:#2563eb;}
+.applications-stage-submitted     {background:#e08b1f;}
+.applications-stage-approved      {background:#1f9d55;}
+.applications-stage-declined      {background:#d92d20;}
+.applications-pipeline-note{margin-top:5px;font-size:12px;}
+
+.applications-table td{vertical-align:middle;}
+.applications-pagination{margin-top:10px;}
+
+.applications-rules-list{padding-left:18px;margin-bottom:0;font-size:13px;}
+.applications-rules-list li{margin-bottom:6px;}
+.applications-rules-list li:last-child{margin-bottom:0;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .applications-filter-actions{flex-direction:column;}
+  .applications-filter-actions .btn{width:100%;}
+  .applications-view-toggle{margin-top:5px;text-align:left;}
+}
+</style>
+
+</body>
+
+</html>

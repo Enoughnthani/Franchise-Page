@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Application Detail</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee application_detail user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Application Detail</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="application_overview.html" class="btn btn-default">
+            <i class="fa fa-arrow-left"></i> Back to Applications
+          </a>
+          <button type="button" class="btn btn-primary" id="btn_save_top">
+            <i class="fa fa-save"></i> Save Changes
+          </button>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Review the applicant, current progress and outstanding actions.
+      </div>
+
+      <div class="alert alert-warning">
+        <i class="fa fa-exclamation-triangle"></i>
+        <strong>2 items require attention:</strong> Latest bank statement missing &middot; Employment start date requires confirmation.
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Applicant</small></div>
+            <strong>Mandla Khumalo</strong>
+            <div class="text-muted">APP-2026-1015</div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Type</small></div>
+            <strong>Individual</strong>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Attempt</small></div>
+            <strong>1</strong>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Consultant</small></div>
+            <strong>Maria Schwan</strong>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Pipeline Stage</small></div>
+            <span class="label label-info">Affordability Check</span>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Working Status</small></div>
+            <span class="label label-warning">Consultant Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Progress</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="application-progress-stepper">
+            <li class="application-progress-step application-step-done">
+              <span class="application-step-dot"><i class="fa fa-check"></i></span>
+              <span class="application-step-label">Application received</span>
+              <span class="application-step-status text-success">Complete</span>
+            </li>
+            <li class="application-progress-step application-step-done">
+              <span class="application-step-dot"><i class="fa fa-check"></i></span>
+              <span class="application-step-label">Initial information</span>
+              <span class="application-step-status text-success">Complete</span>
+            </li>
+            <li class="application-progress-step application-step-active">
+              <span class="application-step-dot"><i class="fa fa-circle-o"></i></span>
+              <span class="application-step-label">Consultant review</span>
+              <span class="application-step-status text-primary">In progress</span>
+            </li>
+            <li class="application-progress-step">
+              <span class="application-step-dot"><i class="fa fa-circle-o"></i></span>
+              <span class="application-step-label">Affordability</span>
+              <span class="application-step-status text-muted">Not started</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Next Actions</h5>
+          <hr class="hr-panel-heading" />
+          <div class="application-next-actions">
+            <a href="#tab_documents" class="btn btn-default btn-block application-tab-link" data-tab="tab_documents">
+              <i class="fa fa-folder-open"></i> Open Documents
+            </a>
+            <a href="#tab_experian" class="btn btn-default btn-block application-tab-link" data-tab="tab_experian">
+              <i class="fa fa-shield"></i> View Experian
+            </a>
+            <a href="affordability_review.html" class="btn btn-primary btn-block">
+              <i class="fa fa-calculator"></i> Start Affordability
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-exclamation-circle text-warning"></i> Items Requiring Attention</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="application-attention-list">
+            <li>
+              <i class="fa fa-exclamation-triangle text-warning"></i>
+              Latest bank statement missing
+              <a href="#tab_documents" class="application-tab-link text-primary" data-tab="tab_documents">Upload</a>
+            </li>
+            <li>
+              <i class="fa fa-exclamation-triangle text-warning"></i>
+              Employment start date requires confirmation
+              <a href="#tab_employment" class="application-tab-link text-primary" data-tab="tab_employment">Review</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Recent Activity</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="application-recent-activity">
+            <li>
+              <span class="text-muted"><small>28 Aug 2026</small></span>
+              Application received from external system
+            </li>
+            <li>
+              <span class="text-muted"><small>29 Aug 2026</small></span>
+              Consultant assigned: Maria Schwan
+            </li>
+            <li>
+              <span class="text-muted"><small>02 Sep 2026</small></span>
+              Missing information noted
+            </li>
+          </ul>
+          <div class="text-right m-t-10">
+            <a href="#tab_activity" class="application-tab-link btn btn-default btn-sm" data-tab="tab_activity">
+              <i class="fa fa-history"></i> View Full History
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="nav nav-tabs" role="tablist" id="application_tabs">
+    <li role="presentation" class="active"><a href="#tab_application" role="tab" data-toggle="tab" data-tab-id="tab_application">Application</a></li>
+    <li role="presentation"><a href="#tab_employment" role="tab" data-toggle="tab" data-tab-id="tab_employment">Employment &amp; Income</a></li>
+    <li role="presentation"><a href="#tab_expenses" role="tab" data-toggle="tab" data-tab-id="tab_expenses">Expenses &amp; Commitments</a></li>
+    <li role="presentation"><a href="#tab_properties" role="tab" data-toggle="tab" data-tab-id="tab_properties">Properties &amp; Home Loans</a></li>
+    <li role="presentation"><a href="#tab_declarations" role="tab" data-toggle="tab" data-tab-id="tab_declarations">Declarations &amp; Consent</a></li>
+    <li role="presentation"><a href="#tab_experian" role="tab" data-toggle="tab" data-tab-id="tab_experian">Experian</a></li>
+    <li role="presentation"><a href="#tab_documents" role="tab" data-toggle="tab" data-tab-id="tab_documents">Documents</a></li>
+    <li role="presentation"><a href="#tab_affordability" role="tab" data-toggle="tab" data-tab-id="tab_affordability">Affordability</a></li>
+    <li role="presentation"><a href="#tab_activity" role="tab" data-toggle="tab" data-tab-id="tab_activity">Activity &amp; History</a></li>
+  </ul>
+
+  <div class="tab-content m-t-15">
+
+    <div role="tabpanel" class="tab-pane active" id="tab_application">
+      <div class="panel_s">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h5 class="bold">Applicant Information</h5>
+              <div class="form-group">
+                <label for="first_name">First name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="first_name" name="first_name" value="Mandla">
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="last_name" name="last_name" value="Khumalo">
+              </div>
+              <div class="form-group">
+                <label for="id_number">Identity / Passport number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="id_number" name="id_number" value="8801015800083">
+              </div>
+              <div class="form-group">
+                <label for="date_of_birth">Date of birth</label>
+                <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" value="1988-01-01">
+              </div>
+              <div class="form-group">
+                <label for="marital_status">Marital status</label>
+                <select class="form-control" id="marital_status" name="marital_status">
+                  <option>Single</option>
+                  <option selected>Married</option>
+                  <option>Divorced</option>
+                  <option>Widowed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="dependents">Dependents</label>
+                <input type="number" class="form-control" id="dependents" name="dependents" value="2">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <h5 class="bold">Contact &amp; Address</h5>
+              <div class="form-group">
+                <label for="cellphone">Cellphone <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="cellphone" name="cellphone" value="082 555 0148">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" value="mandla@example.co.za">
+              </div>
+              <div class="form-group">
+                <label for="residential_address">Residential address</label>
+                <textarea class="form-control" id="residential_address" name="residential_address" rows="3">12 Loop Street, Belville, Cape Town, 7530</textarea>
+              </div>
+              <div class="form-group">
+                <label for="residency">Residency</label>
+                <select class="form-control" id="residency" name="residency">
+                  <option selected>South African resident</option>
+                  <option>Permanent resident</option>
+                  <option>Non-resident</option>
+                </select>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="first_time_buyer" name="first_time_buyer" checked> First-time buyer
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="primary_residence" name="primary_residence" checked> Primary residence
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <hr class="hr-panel-heading" />
+
+          <h5 class="bold">Application Details</h5>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="application_type">Application type <span class="text-danger">*</span></label>
+                <select class="form-control" id="application_type" name="application_type">
+                  <option selected>Individual</option>
+                  <option>Joint (2 applicants)</option>
+                  <option>Multiple (3 or 4 applicants)</option>
+                  <option>Close Corporation</option>
+                  <option>Company</option>
+                  <option>Trust</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="income_category">Income category <span class="text-danger">*</span></label>
+                <select class="form-control" id="income_category" name="income_category">
+                  <option selected>Employed — Fixed Salary</option>
+                  <option>Employed — Commission / Overtime</option>
+                  <option>Self-employed</option>
+                  <option>Sole proprietor</option>
+                  <option>Director</option>
+                  <option>Company / CC / Trust</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="source">Source</label>
+                <input type="text" class="form-control" id="source" name="source" value="External Application" readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="administration" name="administration"> Administration / Insolvency / Debt review
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_employment">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Employment</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="employer">Employer <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="employer" name="employer" value="ABC Logistics (Pty) Ltd">
+              </div>
+              <div class="form-group">
+                <label for="occupation">Occupation <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="occupation" name="occupation" value="Operations Manager">
+              </div>
+              <div class="form-group">
+                <label for="employment_start">Employment start date <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="employment_start" name="employment_start" value="">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="employment_type">Employment type</label>
+                <select class="form-control" id="employment_type" name="employment_type">
+                  <option selected>Permanent</option>
+                  <option>Contract</option>
+                  <option>Probation</option>
+                  <option>Self-employed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tax_number">Tax number</label>
+                <input type="text" class="form-control" id="tax_number" name="tax_number" value="1234567890">
+              </div>
+            </div>
+          </div>
+
+          <hr class="hr-panel-heading" />
+
+          <h5 class="bold">Income</h5>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Income type</th>
+                  <th>Amount (R)</th>
+                  <th>Frequency</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Fixed salary</td>
+                  <td><input type="text" class="form-control" value="38,000"></td>
+                  <td>
+                    <select class="form-control">
+                      <option selected>Monthly</option>
+                      <option>Weekly</option>
+                      <option>Fortnightly</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Commission</td>
+                  <td><input type="text" class="form-control" value="3,000"></td>
+                  <td>
+                    <select class="form-control">
+                      <option selected>Monthly</option>
+                      <option>Weekly</option>
+                      <option>Fortnightly</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Overtime</td>
+                  <td><input type="text" class="form-control" value="1,500"></td>
+                  <td>
+                    <select class="form-control">
+                      <option selected>Monthly</option>
+                      <option>Weekly</option>
+                      <option>Fortnightly</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Rental income</td>
+                  <td><input type="text" class="form-control" value="0"></td>
+                  <td>
+                    <select class="form-control">
+                      <option selected>Monthly</option>
+                      <option>Weekly</option>
+                      <option>Fortnightly</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Future rental income</td>
+                  <td><input type="text" class="form-control" value="0"></td>
+                  <td>
+                    <select class="form-control">
+                      <option selected>Monthly</option>
+                      <option>Weekly</option>
+                      <option>Fortnightly</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Other income</td>
+                  <td><input type="text" class="form-control" value="0"></td>
+                  <td>
+                    <select class="form-control">
+                      <option selected>Monthly</option>
+                      <option>Weekly</option>
+                      <option>Fortnightly</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="well well-sm">
+            <strong>Total qualifying income:</strong> R42,500
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_expenses">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Deductions, Expenses &amp; Commitments</h5>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Amount (R)</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Salary deduction</td>
+                  <td><input type="text" class="form-control" value="PAYE + UIF"></td>
+                  <td><input type="text" class="form-control" value="8,500"></td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Living expenses</td>
+                  <td><input type="text" class="form-control" value="Household &amp; transport"></td>
+                  <td><input type="text" class="form-control" value="13,200"></td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Home loan repayment</td>
+                  <td><input type="text" class="form-control" value="Standard Bank"></td>
+                  <td><input type="text" class="form-control" value="8,400"></td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Vehicle finance</td>
+                  <td><input type="text" class="form-control" value="WesBank"></td>
+                  <td><input type="text" class="form-control" value="2,100"></td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+                <tr>
+                  <td>Other debt</td>
+                  <td><input type="text" class="form-control" value="Credit card"></td>
+                  <td><input type="text" class="form-control" value="2,700"></td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="well well-sm">
+            <strong>Total deductions, expenses and commitments:</strong> R34,900
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_properties">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Properties &amp; Home Loans</h5>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Outstanding bond</th>
+                  <th>Monthly repayment</th>
+                  <th>Will it be sold?</th>
+                  <th>Home loan settled?</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>18 Oak Avenue, Belville</td>
+                  <td><input type="text" class="form-control" value="620,000"></td>
+                  <td><input type="text" class="form-control" value="8,400"></td>
+                  <td>
+                    <select class="form-control">
+                      <option>Yes</option>
+                      <option selected>No</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select class="form-control">
+                      <option>Yes</option>
+                      <option selected>No</option>
+                    </select>
+                  </td>
+                  <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr class="hr-panel-heading" />
+
+          <h5 class="bold">Subject to Sale</h5>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="subject_to_sale" name="subject_to_sale"> This purchase depends on selling an existing property
+            </label>
+          </div>
+
+          <div class="well well-sm">
+            <strong>Not Subject to Sale:</strong> Qualifying amount R1,420,000<br>
+            <strong>Subject to Sale:</strong> Qualifying amount R1,865,000
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_declarations">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Declarations, Consent &amp; Signature</h5>
+
+          <div class="well well-sm">
+            <strong>Consent wording version:</strong> v3.2 &middot;
+            <strong>Signed:</strong> 28 Aug 2026 &middot;
+            <strong>Source:</strong> External Application
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="privacy_ack" name="privacy_ack" checked disabled> Privacy acknowledgement accepted
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="consent_accept" name="consent_accept" checked disabled> Consent to credit and affordability checks accepted
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label>Applicant signature</label>
+            <div class="well well-sm no-mbot">
+              Signed electronically on 28 Aug 2026 &mdash; <em>M. Khumalo</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_experian">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Experian Result</h5>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Report number</label>
+                <input type="text" class="form-control" value="EXP-2026-008421" readonly>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Score</label>
+                <input type="text" class="form-control" value="654" readonly>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Result</label>
+                <input type="text" class="form-control" value="Pass (min 620)" readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Date received</label>
+                <input type="text" class="form-control" value="28 Aug 2026" readonly>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Source system reference</label>
+                <input type="text" class="form-control" value="EXT-2026-88412" readonly>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Status</label>
+                <input type="text" class="form-control" value="Current" readonly>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-default">
+            <i class="fa fa-external-link"></i> Open Experian Report
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_documents">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Documents</h5>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Document</th>
+                  <th>Status</th>
+                  <th>Uploaded</th>
+                  <th>Version</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Identity Document</td>
+                  <td><span class="label label-success">Uploaded</span></td>
+                  <td>01 Sep 2026</td>
+                  <td>v1</td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-xs">View</button>
+                    <button type="button" class="btn btn-default btn-xs">Replace</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Latest Payslip</td>
+                  <td><span class="label label-success">Uploaded</span></td>
+                  <td>01 Sep 2026</td>
+                  <td>v2</td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-xs">View</button>
+                    <button type="button" class="btn btn-default btn-xs">Replace</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Bank Statements (3 months)</td>
+                  <td><span class="label label-warning">Missing</span></td>
+                  <td>&mdash;</td>
+                  <td>&mdash;</td>
+                  <td><button type="button" class="btn btn-primary btn-xs">Upload</button></td>
+                </tr>
+                <tr>
+                  <td>Signed Consent</td>
+                  <td><span class="label label-success">Uploaded</span></td>
+                  <td>28 Aug 2026</td>
+                  <td>v1</td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-xs">View</button>
+                    <button type="button" class="btn btn-default btn-xs">Replace</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Experian Report</td>
+                  <td><span class="label label-success">Uploaded</span></td>
+                  <td>28 Aug 2026</td>
+                  <td>v1</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+                <tr>
+                  <td>Proof of Address</td>
+                  <td><span class="label label-warning">Missing</span></td>
+                  <td>&mdash;</td>
+                  <td>&mdash;</td>
+                  <td><button type="button" class="btn btn-primary btn-xs">Upload</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <hr class="hr-panel-heading" />
+
+          <h5 class="bold">Upload a Document</h5>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="doc_type">Document type</label>
+                <select class="form-control" id="doc_type" name="doc_type">
+                  <option>Select document type</option>
+                  <option>Identity Document</option>
+                  <option>Proof of Address</option>
+                  <option>Latest Payslip</option>
+                  <option>Bank Statements</option>
+                  <option>Signed Consent</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="doc_file">File</label>
+                <input type="file" class="form-control" id="doc_file" name="doc_file">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>&nbsp;</label>
+                <button type="button" class="btn btn-primary btn-block">
+                  <i class="fa fa-upload"></i> Upload Document
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="well well-sm">
+            <strong>File rules:</strong> Maximum 5 MB. PDF, JPG, JPEG and PNG only.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_affordability">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Affordability Summary</h5>
+
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Qualifying income</small></div>
+                <strong>R42,500</strong>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Total expenses</small></div>
+                <strong>R34,900</strong>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Monthly surplus</small></div>
+                <strong>R7,600</strong>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Qualifying amount</small></div>
+                <strong>R890,000</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="form-group">
+                <label>RTI</label>
+                <input type="text" class="form-control" value="25%" readonly>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-group">
+                <label>DTI</label>
+                <input type="text" class="form-control" value="39%" readonly>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-group">
+                <label>Loan term</label>
+                <select class="form-control" id="loan_term" name="loan_term">
+                  <option>20 years</option>
+                  <option selected>25 years</option>
+                  <option>30 years</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-group">
+                <label>Interest rate</label>
+                <input type="text" class="form-control" value="10.75%" readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="well well-sm">
+            <strong>Calculation status:</strong> <span class="label label-success">Current</span>
+            &middot; <strong>Rule version:</strong> AFF-3.9 &middot; <strong>Calculated:</strong> 01 Sep 2026
+          </div>
+
+          <a href="affordability_review.html" class="btn btn-primary">
+            <i class="fa fa-calculator"></i> Open Affordability Review
+          </a>
+          <a href="affordability_review.html" class="btn btn-default">
+            <i class="fa fa-list"></i> View Full Calculation
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="tab_activity">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Recent Activity</h5>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>When</th>
+                  <th>Actor</th>
+                  <th>Event</th>
+                  <th>Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>28 Aug 2026</td>
+                  <td>External System</td>
+                  <td>Application received from external system</td>
+                  <td>&mdash;</td>
+                </tr>
+                <tr>
+                  <td>29 Aug 2026</td>
+                  <td>Head Office</td>
+                  <td>Consultant assigned: Maria Schwan</td>
+                  <td>&mdash;</td>
+                </tr>
+                <tr>
+                  <td>02 Sep 2026</td>
+                  <td>Maria Schwan</td>
+                  <td>Missing information noted</td>
+                  <td>Latest bank statement &amp; employment start date</td>
+                </tr>
+                <tr>
+                  <td>03 Sep 2026</td>
+                  <td>Maria Schwan</td>
+                  <td>Affordability calculation run</td>
+                  <td>Rule version AFF-3.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-right">
+            <button type="button" class="btn btn-default btn-sm">
+              <i class="fa fa-history"></i> View Full History
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <hr class="hr-panel-heading" />
+
+      <div class="mbot15 application-actions">
+        <button type="button" class="btn btn-primary" id="btn_save_bottom">
+          <i class="fa fa-save"></i> Save Changes
+        </button>
+        <a href="#tab_documents" class="btn btn-default application-tab-link" data-tab="tab_documents">
+          <i class="fa fa-upload"></i> Upload Document
+        </a>
+        <a href="#tab_documents" class="btn btn-default application-tab-link" data-tab="tab_documents">
+          <i class="fa fa-link"></i> Link Previous Document
+        </a>
+        <a href="joint_deal_detail.html" class="btn btn-default">
+          <i class="fa fa-users"></i> Link to Deal
+        </a>
+        <a href="affordability_review.html" class="btn btn-default">
+          <i class="fa fa-calculator"></i> Run Affordability
+        </a>
+        <a href="tasks.html" class="btn btn-default">
+          <i class="fa fa-check-square-o"></i> Create Task
+        </a>
+        <a href="bond_application.html" class="btn btn-default">
+          <i class="fa fa-comments-o"></i> Respond to Head Office
+        </a>
+        <button type="button" class="btn btn-default" id="btn_previous_attempts">
+          <i class="fa fa-history"></i> View Previous Attempts
+        </button>
+      </div>
+
+      <div class="well well-sm">
+        <i class="fa fa-info-circle"></i>
+        Changes to financial information may make an existing affordability calculation or Buyer's Certificate out of date. Original imported values, documents and earlier attempts remain traceable.
+      </div>
+    </div>
+  </div>
+
+</div></div></div>
+
+<style>
+.application-actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;align-items:center;}
+.application-actions .btn{white-space:normal!important;float:none!important;max-width:100%!important;}
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+.nav-tabs{margin-top:0;}
+.tab-content .bold{font-weight:600;}
+
+.application-progress-stepper{list-style:none;padding-left:0;margin:0;}
+.application-progress-step{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 0;border-bottom:1px dashed #eef2f4;
+}
+.application-progress-step:last-child{border-bottom:0;}
+.application-step-dot{
+  width:26px;height:26px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#f2f4f7;color:#6b7280;font-size:12px;flex:0 0 26px;
+}
+.application-step-done .application-step-dot{background:#1f9d55;color:#fff;}
+.application-step-active .application-step-dot{background:#2563eb;color:#fff;}
+.application-step-label{flex:1 1 auto;font-weight:500;}
+.application-step-status{font-size:12px;font-weight:600;}
+
+.application-next-actions .btn{margin-bottom:8px;text-align:left;}
+.application-next-actions .btn:last-child{margin-bottom:0;}
+
+.application-attention-list{list-style:none;padding-left:0;margin:0;}
+.application-attention-list li{padding:6px 0;border-bottom:1px dashed #eef2f4;}
+.application-attention-list li:last-child{border-bottom:0;}
+.application-attention-list a{font-size:12px;margin-left:6px;}
+
+.application-recent-activity{list-style:none;padding-left:0;margin:0;}
+.application-recent-activity li{padding:6px 0;border-bottom:1px dashed #eef2f4;font-size:13px;}
+.application-recent-activity li:last-child{border-bottom:0;}
+
+@media (max-width:767px){
+  .application-actions .btn{width:100%;}
+  .application-next-actions .btn{text-align:center;}
+}
+</style>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('#application_tabs a[data-toggle="tab"]');
+
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', function(e){
+      e.preventDefault();
+      var target = this.getAttribute('href');
+
+      for (var k = 0; k < tabs.length; k++) {
+        tabs[k].parentNode.classList.remove('active');
+      }
+      this.parentNode.classList.add('active');
+
+      var panes = document.querySelectorAll('.tab-content > .tab-pane');
+      for (var p = 0; p < panes.length; p++) {
+        panes[p].classList.remove('active', 'in');
+      }
+      var targetPane = document.querySelector(target);
+      if (targetPane) targetPane.classList.add('active', 'in');
+
+      window.scrollTo({ top: document.getElementById('application_tabs').offsetTop - 20, behavior: 'smooth' });
+    });
+  }
+
+  var links = document.querySelectorAll('.application-tab-link');
+  for (var l = 0; l < links.length; l++) {
+    links[l].addEventListener('click', function(e){
+      e.preventDefault();
+      var id = this.getAttribute('data-tab');
+      var tabLink = document.querySelector('#application_tabs a[data-tab-id="' + id + '"]');
+      if (tabLink) tabLink.click();
+    });
+  }
+
+  var saveTop = document.getElementById('btn_save_top');
+  var saveBottom = document.getElementById('btn_save_bottom');
+  function flashSaved(btn){
+    var original = btn.innerHTML;
+    btn.innerHTML = '<i class="fa fa-check"></i> Saved';
+    btn.classList.remove('btn-primary');
+    btn.classList.add('btn-success');
+    setTimeout(function(){
+      btn.innerHTML = original;
+      btn.classList.remove('btn-success');
+      btn.classList.add('btn-primary');
+    }, 1200);
+  }
+  if (saveTop)    saveTop.addEventListener('click', function(){ flashSaved(this); });
+  if (saveBottom) saveBottom.addEventListener('click', function(){ flashSaved(this); });
+
+  var prevBtn = document.getElementById('btn_previous_attempts');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function(){
+      alert('Previous attempts: Attempt 1 of 1 for Mandla Khumalo.');
+    });
+  }
+})();
+</script>
+
+</body>
+
+</html>

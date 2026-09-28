@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Registration Overview - Franchisee View -->
+
+    <style>
+        #fm-registration_franchisee_view {
+            padding: 15px 0;
+        }
+
+        #fm-registration_franchisee_view .registration-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        #fm-registration_franchisee_view .registration-header h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        #fm-registration_franchisee_view .view-only {
+            background: #f5f7fa;
+            border: 1px solid #e2e6ea;
+            border-radius: 6px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        #fm-registration_franchisee_view .info-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        #fm-registration_franchisee_view .card-title {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        #fm-registration_franchisee_view .card-body {
+            padding: 15px;
+        }
+
+        #fm-registration_franchisee_view .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        #fm-registration_franchisee_view .info-item label {
+            display: block;
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        #fm-registration_franchisee_view .info-item strong {
+            display: block;
+            font-size: 14px;
+            color: #333;
+        }
+
+        #fm-registration_franchisee_view .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        #fm-registration_franchisee_view .timeline {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        #fm-registration_franchisee_view .timeline-item {
+            position: relative;
+            padding: 0 0 25px 20px;
+            border-left: 2px solid #ddd;
+        }
+
+        #fm-registration_franchisee_view .timeline-item:last-child {
+            border-left: 0;
+        }
+
+        #fm-registration_franchisee_view .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #337ab7;
+        }
+
+        #fm-registration_franchisee_view .timeline-date {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        #fm-registration_franchisee_view .timeline-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        #fm-registration_franchisee_view .timeline-note {
+            color: #666;
+            font-size: 13px;
+        }
+
+        #fm-registration_franchisee_view .btn-support {
+            border: 0;
+            background: #337ab7;
+            color: #fff;
+            padding: 9px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #fm-registration_franchisee_view .btn-support:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 992px) {
+            #fm-registration_franchisee_view .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            #fm-registration_franchisee_view .registration-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #fm-registration_franchisee_view .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #fm-registration_franchisee_view .btn-support {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div id="fm-registration_franchisee_view" class="content">
+
+        <div class="panel_s">
+            <div class="panel-body">
+
+                <div class="registration-header">
+                    <h4>Registration Overview</h4>
+
+                    <button class="btn-support" onclick="createRegistrationTicket()">
+                        Raise Support Ticket
+                    </button>
+                </div>
+
+                <div class="view-only">
+                    <strong>View Only</strong><br>
+                    Registration information is managed by Head Office.
+                    You cannot change registration details, lawyer details or registration status.
+                </div>
+
+                <div class="info-card">
+                    <div class="card-title">
+                        Registration Information
+                    </div>
+
+                    <div class="card-body">
+                        <div class="info-grid">
+
+                            <div class="info-item">
+                                <label>Date</label>
+                                <strong>10 September 2026</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Applicant</label>
+                                <strong>John Doe</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Franchisee Consultant</label>
+                                <strong>Example Consultant</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Franchisee</label>
+                                <strong>Bond Gallery Pretoria</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Bond Reference Number</label>
+                                <strong>BG-REG-00125</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Bond Bank</label>
+                                <strong>Standard Bank</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Registration Status</label>
+                                <span class="status">In Progress</span>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Last Update</label>
+                                <strong>22 September 2026</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Next Follow-up</label>
+                                <strong>29 September 2026</strong>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-title">
+                        Lawyer Details
+                    </div>
+
+                    <div class="card-body">
+                        <div class="info-grid">
+
+                            <div class="info-item">
+                                <label>Lawyer Name</label>
+                                <strong>ABC Attorneys</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Lawyer Email</label>
+                                <strong>lawyer@example.com</strong>
+                            </div>
+
+                            <div class="info-item">
+                                <label>Lawyer Telephone</label>
+                                <strong>012 345 6789</strong>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-title">
+                        Registration History
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">
+                                    22 September 2026
+                                </div>
+
+                                <div class="timeline-title">
+                                    Registration In Progress
+                                </div>
+
+                                <div class="timeline-note">
+                                    Registration is currently being processed.
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">
+                                    18 September 2026
+                                </div>
+
+                                <div class="timeline-title">
+                                    Documents Submitted
+                                </div>
+
+                                <div class="timeline-note">
+                                    Registration documents were submitted to the attorney.
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">
+                                    15 September 2026
+                                </div>
+
+                                <div class="timeline-title">
+                                    Registration Started
+                                </div>
+
+                                <div class="timeline-note">
+                                    Registration process started.
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-title">
+                        Notes
+                    </div>
+
+                    <div class="card-body">
+                        Registration is currently being handled by Head Office.
+                        Please raise a support ticket if you have any questions.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function createRegistrationTicket() {
+            alert("Support ticket will be created for this registration.");
+        }
+    </script>
+
+</body>
+
+</html>

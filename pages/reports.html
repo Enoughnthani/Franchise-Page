@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Franchisee Reports</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee reports user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <!-- ============================== HEADER ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Franchisee Reports</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <button type="button" class="btn btn-default">
+            <i class="fa fa-download"></i> Export Report
+          </button>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        View performance, pipeline progress and outstanding work for your franchise.
+      </div>
+
+      <!-- ============================== FILTERS ============================== -->
+      <h5 class="bold">Report Filters</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="rpt_date_range">Date Range</label>
+            <select class="form-control" id="rpt_date_range">
+              <option>Last 7 Days</option>
+              <option selected>This Month</option>
+              <option>Last Month</option>
+              <option>This Year</option>
+              <option>Last Year</option>
+              <option>Custom Range</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="rpt_consultant">Consultant</label>
+            <select class="form-control" id="rpt_consultant">
+              <option selected>All consultants</option>
+              <option>Maria Schwan</option>
+              <option>Priya Naidoo</option>
+              <option>Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="rpt_type">Report</label>
+            <select class="form-control" id="rpt_type">
+              <option selected>Overview</option>
+              <option>Applications</option>
+              <option>Certificates</option>
+              <option>Submissions</option>
+              <option>Bond outcomes</option>
+              <option>Registrations</option>
+              <option>Missing items</option>
+              <option>Tasks</option>
+              <option>Storage</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="reports-filter-actions">
+              <button type="button" class="btn btn-primary">Apply Filters</button>
+              <button type="button" class="btn btn-default">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-muted reports-filter-range">
+        01 Sep &ndash; 07 Sep 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== KEY TOTALS ============================== -->
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm reports-tile">
+        <i class="fa fa-file-text-o reports-tile-icon reports-icon-blue"></i>
+        <div class="text-muted reports-tile-label">Applications Received</div>
+        <div class="reports-tile-value">24</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm reports-tile">
+        <i class="fa fa-certificate reports-tile-icon reports-icon-green"></i>
+        <div class="text-muted reports-tile-label">Buyer's Certificates</div>
+        <div class="reports-tile-value">8</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm reports-tile">
+        <i class="fa fa-bank reports-tile-icon reports-icon-orange"></i>
+        <div class="text-muted reports-tile-label">Submitted to Banks</div>
+        <div class="reports-tile-value">5</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm reports-tile">
+        <i class="fa fa-check-circle reports-tile-icon reports-icon-green"></i>
+        <div class="text-muted reports-tile-label">Approved</div>
+        <div class="reports-tile-value">3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== APPLICATION PIPELINE ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Application Pipeline</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-default btn-sm">
+            <i class="fa fa-list"></i> View Applications
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm text-center reports-pipeline-card">
+            <div class="text-muted reports-pipeline-label">New Application</div>
+            <div class="reports-pipeline-count reports-stage-new">6</div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm text-center reports-pipeline-card">
+            <div class="text-muted reports-pipeline-label">Incomplete</div>
+            <div class="reports-pipeline-count reports-stage-incomplete">4</div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm text-center reports-pipeline-card">
+            <div class="text-muted reports-pipeline-label">Affordability Check</div>
+            <div class="reports-pipeline-count reports-stage-affordability">7</div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm text-center reports-pipeline-card">
+            <div class="text-muted reports-pipeline-label">Submitted to Banks</div>
+            <div class="reports-pipeline-count reports-stage-submitted">3</div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm text-center reports-pipeline-card">
+            <div class="text-muted reports-pipeline-label">Approved</div>
+            <div class="reports-pipeline-count reports-stage-approved">3</div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <div class="well well-sm text-center reports-pipeline-card">
+            <div class="text-muted reports-pipeline-label">Declined</div>
+            <div class="reports-pipeline-count reports-stage-declined">1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-muted reports-pipeline-note">
+        Stage 2 preparation remains under Affordability Check until external submission is manually recorded.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== OUTSTANDING + CONSULTANT SUMMARY ============================== -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Outstanding Actions</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Count</th>
+                  <th>View</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-exclamation-triangle reports-icon-orange"></i> Missing information</td>
+                  <td>4</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-calculator reports-icon-blue"></i> Affordability reviews</td>
+                  <td>3</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-certificate reports-icon-green"></i> Certificates expiring soon</td>
+                  <td>2</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-clock-o reports-icon-red"></i> Overdue tasks</td>
+                  <td>3</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-question-circle-o reports-icon-blue"></i> Open information requests</td>
+                  <td>1</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-undo reports-icon-red"></i> Returned for correction</td>
+                  <td>2</td>
+                  <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Consultant Summary</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Consultant</th>
+                  <th>Applications</th>
+                  <th>Certificates</th>
+                  <th>Approved</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Maria Schwan</td>
+                  <td>10</td>
+                  <td>4</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>Priya Naidoo</td>
+                  <td>8</td>
+                  <td>3</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>Neil Petersen</td>
+                  <td>6</td>
+                  <td>1</td>
+                  <td>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="text-right reports-view-consultants">
+            <a href="#" class="btn btn-default btn-sm">View Consultant Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== STAGE CONVERSION ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Stage Conversion</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Count</th>
+              <th>Conversion to next stage</th>
+              <th>Average days in stage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>New Application</td>
+              <td>6</td>
+              <td>67%</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Incomplete</td>
+              <td>4</td>
+              <td>75%</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Affordability Check</td>
+              <td>7</td>
+              <td>71%</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Submitted to Banks</td>
+              <td>3</td>
+              <td>100%</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>Approved</td>
+              <td>3</td>
+              <td>—</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Declined</td>
+              <td>1</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== BOND OUTCOMES ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Bond Outcomes</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Outcome</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Bond Granted</td><td>3</td></tr>
+            <tr><td>Bond Accepted</td><td>2</td></tr>
+            <tr><td>Approval in Principle</td><td>1</td></tr>
+            <tr><td>Granted Lower</td><td>1</td></tr>
+            <tr><td>Bond Declined</td><td>1</td></tr>
+            <tr><td>Bond Not Taken Up</td><td>0</td></tr>
+            <tr><td>Decided Not to Buy — After Submission</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== REGISTRATIONS ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Registrations</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Registration Status</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Attorney Instructed</td><td>2</td></tr>
+            <tr><td>Documents in Preparation</td><td>2</td></tr>
+            <tr><td>Awaiting Guarantees</td><td>1</td></tr>
+            <tr><td>Ready to Lodge</td><td>1</td></tr>
+            <tr><td>Lodged</td><td>1</td></tr>
+            <tr><td>Registration in Progress</td><td>0</td></tr>
+            <tr><td>Registered</td><td>3</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== CERTIFICATE OUTCOMES ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Buyer's Certificate Outcomes</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Certificate Outcome</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Issued and Active</td><td>4</td></tr>
+            <tr><td>Awaiting Offer to Purchase</td><td>2</td></tr>
+            <tr><td>Proceeded to Submit to Bank</td><td>1</td></tr>
+            <tr><td>Expired</td><td>1</td></tr>
+            <tr><td>Lost to Competitor</td><td>0</td></tr>
+            <tr><td>Decided Not to Buy — Before Submission</td><td>0</td></tr>
+            <tr><td>Could Not Find Property</td><td>1</td></tr>
+            <tr><td>Other Certificate Outcome</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== MISSING ITEMS & TASKS ============================== -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Missing Items</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Missing documents (general)</td><td>4</td></tr>
+                <tr><td>Missing submission documents (Stage 2)</td><td>2</td></tr>
+                <tr><td>Missing consent or signature</td><td>1</td></tr>
+                <tr><td>Missing Experian result</td><td>0</td></tr>
+                <tr><td>Missing required declarations</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Tasks</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Task Status</th>
+                  <th>Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Open</td><td>9</td></tr>
+                <tr><td>Due today</td><td>3</td></tr>
+                <tr><td>Overdue</td><td>3</td></tr>
+                <tr><td>Completed (in range)</td><td>12</td></tr>
+                <tr><td>Automatic Buyer's Certificate alerts</td><td>4</td></tr>
+                <tr><td>Manual tasks</td><td>14</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== STORAGE ============================== -->
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Document Storage</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Measure</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Allocation</td><td>10 GB</td></tr>
+            <tr><td>Used</td><td>4.2 GB</td></tr>
+            <tr><td>Available</td><td>5.8 GB</td></tr>
+            <tr><td>Usage</td><td>42%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="progress reports-storage-progress">
+        <div class="progress-bar" role="progressbar"
+             aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"
+             style="width:42%;">
+          42%
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================== FOOTER NOTE ============================== -->
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Only records belonging to your franchise are included. Report totals must match the Applications, Certificates, Tasks and other operational pages.
+  </div>
+
+</div></div></div>
+
+<style>
+.reports-filter-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.reports-filter-range{margin-top:5px;}
+
+.reports-tile{margin-bottom:15px;}
+.reports-tile-icon{font-size:20px;margin-bottom:6px;display:block;}
+.reports-icon-blue{color:#2563eb;}
+.reports-icon-green{color:#1f9d55;}
+.reports-icon-orange{color:#e08b1f;}
+.reports-icon-red{color:#d92d20;}
+.reports-tile-label{font-size:12px;margin-bottom:4px;}
+.reports-tile-value{font-size:26px;font-weight:600;color:#111827;}
+
+.reports-pipeline-card{margin-bottom:15px;background:#fff;}
+.reports-pipeline-label{font-size:12px;margin-bottom:8px;}
+.reports-pipeline-count{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;
+  font-weight:600;font-size:16px;color:#fff;
+}
+.reports-stage-new           {background:#1f2d3d;}
+.reports-stage-incomplete    {background:#2c8f9c;}
+.reports-stage-affordability {background:#2563eb;}
+.reports-stage-submitted     {background:#e08b1f;}
+.reports-stage-approved      {background:#1f9d55;}
+.reports-stage-declined      {background:#d92d20;}
+.reports-pipeline-note{margin-top:5px;font-size:12px;}
+
+.reports-view-consultants{margin-top:10px;}
+.reports-storage-progress{margin-top:10px;margin-bottom:0;height:20px;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .reports-filter-actions{flex-direction:column;}
+  .reports-filter-actions .btn{width:100%;}
+  .reports-tile-value{font-size:22px;}
+}
+</style>
+
+</body>
+
+</html>

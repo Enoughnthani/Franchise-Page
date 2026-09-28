@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Affordability Review</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee affordability_review user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Affordability Review</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="affordability_overview.html" class="btn btn-default">
+            <i class="fa fa-arrow-left"></i> Back to Overview
+          </a>
+          <button type="button" class="btn btn-primary" id="aff_save_recalc_top">
+            <i class="fa fa-save"></i> Save &amp; Recalculate
+          </button>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Review the applicant's verified inputs and calculated affordability.
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Applicant / Deal</small></div>
+            <strong>Mandla Khumalo</strong>
+            <div class="text-muted">APP-2026-1015</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Consultant</small></div>
+            <strong>Maria Schwan</strong>
+            <div class="text-muted">Franchise Consultant</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Record Type</small></div>
+            <strong>Individual</strong>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Pipeline Stage</small></div>
+            <span class="label label-info">Affordability Check</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Experian Result</small></div>
+            <strong>671</strong>
+            <span class="label label-success m-l-5">Pass</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Calculation Date &amp; Status</small></div>
+            <strong>01 Sep 2026</strong>
+            <span class="label label-success m-l-5">Current</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Business Rule Version</small></div>
+            <strong>AFF-3.9</strong>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Attempt</small></div>
+            <strong>1</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Verified Financial Inputs</h5>
+          <hr class="hr-panel-heading" />
+
+          <table class="table table-condensed affordability-kv">
+            <tbody>
+              <tr>
+                <td class="text-muted">Fixed salary</td>
+                <td class="text-right">R38,000</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Commission</td>
+                <td class="text-right">R3,000</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Overtime</td>
+                <td class="text-right">R1,500</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Allowances</td>
+                <td class="text-right">R0</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Bonus / variable income</td>
+                <td class="text-right">R0</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Business / self-employed income</td>
+                <td class="text-right">R0</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Rental income</td>
+                <td class="text-right">R0</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Future rental income</td>
+                <td class="text-right">R0</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Other income</td>
+                <td class="text-right">R0</td>
+              </tr>
+              <tr class="affordability-kv-total">
+                <td>Qualifying income</td>
+                <td class="text-right"><strong>R42,500</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h6 class="bold m-t-15">Deductions and Commitments</h6>
+          <table class="table table-condensed affordability-kv">
+            <tbody>
+              <tr>
+                <td class="text-muted">Salary deductions</td>
+                <td class="text-right">R8,500</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Living expenses</td>
+                <td class="text-right">R13,200</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Home loan repayments</td>
+                <td class="text-right">R8,400</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Vehicle finance</td>
+                <td class="text-right">R2,100</td>
+              </tr>
+              <tr>
+                <td class="text-muted">Other debt</td>
+                <td class="text-right">R2,700</td>
+              </tr>
+              <tr class="affordability-kv-total">
+                <td>Total deductions and commitments</td>
+                <td class="text-right"><strong>R34,900</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Calculated Affordability</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Qualifying income</small></div>
+                <strong>R50,500</strong>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Monthly surplus</small></div>
+                <strong>R18,500</strong>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Maximum repayment</small></div>
+                <strong>R8,900</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>Qualifying amount</small></div>
+                <strong>R890,000</strong>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>RTI</small></div>
+                <strong>25%</strong>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="well well-sm">
+                <div class="text-muted"><small>DTI</small></div>
+                <strong>39%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="affordability-assumptions">
+            <div class="text-muted"><strong>Calculation assumptions</strong></div>
+            <div class="text-muted"><small>20-year term. Approved interest-rate rule used in the background. Full cost breakdown is available on request.</small></div>
+          </div>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="aff_subject_to_sale"> <strong>Subject to Sale</strong> — show both Subject to Sale and Not Subject to Sale results.
+            </label>
+          </div>
+
+          <div class="row m-t-10">
+            <div class="col-md-6 col-sm-6">
+              <div class="well well-sm affordability-result-neutral">
+                <div class="text-muted"><small>Not Subject to Sale</small></div>
+                <div class="affordability-result-label">Qualifying amount</div>
+                <div class="affordability-result-value">R890,000</div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="well well-sm affordability-result-success">
+                <div class="text-muted"><small>Subject to Sale</small></div>
+                <div class="affordability-result-label">Qualifying amount</div>
+                <div class="affordability-result-value">R1,180,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Qualification Checks</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="affordability-check">
+            <i class="fa fa-check-circle text-success"></i>
+            <div>
+              <div class="text-muted"><small>Experian score</small></div>
+              <strong>671</strong>
+              <span class="label label-success m-l-5">Pass</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="affordability-check">
+            <i class="fa fa-check-circle text-success"></i>
+            <div>
+              <div class="text-muted"><small>Qualifying amount</small></div>
+              <strong>R890,000</strong>
+              <span class="label label-success m-l-5">Pass</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="affordability-check">
+            <i class="fa fa-check-circle text-success"></i>
+            <div>
+              <div class="text-muted"><small>Active minimums</small></div>
+              <strong>R100,000 / 620</strong>
+              <span class="label label-info m-l-5">Met</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="affordability-check">
+            <i class="fa fa-check-circle text-success"></i>
+            <div>
+              <div class="text-muted"><small>Calculation</small></div>
+              <strong>Current</strong>
+              <span class="label label-success m-l-5">Pass</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-success m-t-15">
+        <i class="fa fa-check-circle"></i>
+        <strong>Qualifies.</strong> This applicant meets the active affordability rules.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Choose the Next Route</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="affordability-route-card">
+            <h6 class="bold">Generate Buyer's Certificate</h6>
+            <p class="text-muted">Use where the applicant requires pre-approval.</p>
+            <a href="buyers_certificate.html" class="btn btn-primary btn-block">
+              <i class="fa fa-certificate"></i> Generate Certificate
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="affordability-route-card">
+            <h6 class="bold">Proceed to Submit to Bank</h6>
+            <p class="text-muted">Create the Stage 2 preparation record for a bond application.</p>
+            <a href="submit_to_bank.html" class="btn btn-primary btn-block">
+              <i class="fa fa-bank"></i> Proceed to Submit to Bank
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-muted m-t-10">
+        <small>These are alternative routes. A Buyer's Certificate is not required before entering Submit to Bank.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Loan Term</h5>
+          <hr class="hr-panel-heading" />
+          <div class="form-group">
+            <select class="form-control" id="aff_loan_term">
+              <option>20 years</option>
+              <option selected>25 years</option>
+              <option>30 years</option>
+            </select>
+          </div>
+          <div class="text-muted"><small>Changing the loan term marks the current calculation out of date and requires Save and Recalculate.</small></div>
+        </div>
+
+        <div class="col-md-6">
+          <h5 class="bold">Calculation Notes</h5>
+          <hr class="hr-panel-heading" />
+          <textarea class="form-control" rows="3" placeholder="Add a note about this calculation..."></textarea>
+          <div class="text-right m-t-5">
+            <button type="button" class="btn btn-default btn-sm" id="aff_save_note">
+              <i class="fa fa-comment"></i> Add Note
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Calculation Versions</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Version</th>
+              <th>Calculated</th>
+              <th>User</th>
+              <th>Rule version</th>
+              <th>Qualifying amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>v3</td>
+              <td>01 Sep 2026</td>
+              <td>Maria Schwan</td>
+              <td>AFF-3.9</td>
+              <td>R890,000</td>
+              <td><span class="label label-success">Current</span></td>
+              <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+            </tr>
+            <tr>
+              <td>v2</td>
+              <td>29 Aug 2026</td>
+              <td>Maria Schwan</td>
+              <td>AFF-3.9</td>
+              <td>R845,000</td>
+              <td><span class="label label-default">Superseded</span></td>
+              <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+            </tr>
+            <tr>
+              <td>v1</td>
+              <td>28 Aug 2026</td>
+              <td>Maria Schwan</td>
+              <td>AFF-3.8</td>
+              <td>R820,000</td>
+              <td><span class="label label-default">Superseded</span></td>
+              <td><button type="button" class="btn btn-default btn-xs">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Calculated results are read-only and cannot be manually overwritten. Every recalculation creates a new version and retains the earlier result. Subject to Sale results are shown for both scenarios.
+  </div>
+
+</div></div></div>
+
+<style>
+.affordability-kv td{padding:6px 4px!important;border-top:1px dashed #eef2f4!important;}
+.affordability-kv td:first-child{width:60%;}
+.affordability-kv-total td{border-top:1px solid #e6e9ee!important;font-weight:600;}
+
+.affordability-assumptions{
+  background:#f8fafc;border:1px solid #e6e9ee;border-radius:4px;
+  padding:10px;margin-top:10px;
+}
+
+.affordability-result-neutral{background:#fff;border:1px solid #e6e9ee;}
+.affordability-result-success{background:#f4fbf6;border:1px solid #cce9d6;}
+.affordability-result-label{font-size:12px;color:#6b7280;margin-top:6px;}
+.affordability-result-value{font-size:22px;font-weight:600;color:#111827;}
+
+.affordability-check{
+  display:flex;align-items:center;gap:10px;
+  border:1px solid #e6e9ee;border-radius:6px;padding:10px;background:#fff;
+  margin-bottom:10px;
+}
+.affordability-check i{font-size:22px;flex:0 0 auto;}
+.affordability-check .label{font-size:11px;}
+
+.affordability-route-card{
+  border:1px solid #e6e9ee;border-radius:6px;padding:14px;
+  background:#fff;height:100%;
+}
+.affordability-route-card h6{margin-top:0;font-size:14px;}
+.affordability-route-card .btn{margin-top:8px;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .affordability-check{margin-bottom:10px;}
+  .affordability-route-card{margin-bottom:15px;}
+}
+</style>
+
+<script>
+(function(){
+  var saveTop      = document.getElementById('aff_save_recalc_top');
+  var loanTerm     = document.getElementById('aff_loan_term');
+  var saveNote     = document.getElementById('aff_save_note');
+
+  function flashSaved(btn, msg){
+    var original = btn.innerHTML;
+    var cls = btn.className;
+    btn.innerHTML = '<i class="fa fa-check"></i> ' + (msg || 'Saved');
+    btn.classList.remove('btn-primary', 'btn-default');
+    btn.classList.add('btn-success');
+    btn.disabled = true;
+    setTimeout(function(){
+      btn.innerHTML = original;
+      btn.className = cls;
+      btn.disabled = false;
+    }, 1400);
+  }
+
+  if (saveTop) saveTop.addEventListener('click', function(){
+    var self = this;
+    var original = self.innerHTML;
+    self.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Recalculating...';
+    self.disabled = true;
+    setTimeout(function(){
+      self.innerHTML = '<i class="fa fa-check"></i> Recalculated &middot; v4';
+      self.classList.remove('btn-primary');
+      self.classList.add('btn-success');
+      setTimeout(function(){
+        self.innerHTML = original;
+        self.classList.remove('btn-success');
+        self.classList.add('btn-primary');
+        self.disabled = false;
+      }, 1500);
+    }, 700);
+  });
+
+  if (loanTerm) loanTerm.addEventListener('change', function(){
+    if (saveTop) saveTop.click();
+  });
+
+  if (saveNote) saveNote.addEventListener('click', function(){
+    flashSaved(this, 'Note added');
+  });
+})();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Affordability Overview</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee affordability user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Affordability Overview</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-default">
+            <i class="fa fa-download"></i> Export List
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Review individual applications and joint deals before choosing the next route.
+      </div>
+
+      <h5 class="bold">Search and filter affordability reviews</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="aff_search">Search</label>
+            <input type="text" class="form-control" id="aff_search" placeholder="Applicant, deal or reference">
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="aff_type">Record Type</label>
+            <select class="form-control" id="aff_type">
+              <option value="">All record types</option>
+              <option value="Individual">Individual</option>
+              <option value="Joint Deal">Joint Deal</option>
+              <option value="Multiple Deal">Multiple Deal</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="aff_consultant">Consultant</label>
+            <select class="form-control" id="aff_consultant">
+              <option value="">All consultants</option>
+              <option value="Maria Schwan">Maria Schwan</option>
+              <option value="Priya Naidoo">Priya Naidoo</option>
+              <option value="Neil Petersen">Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="aff_status">Calculation Status</label>
+            <select class="form-control" id="aff_status">
+              <option value="">All calculation statuses</option>
+              <option value="Uncalculated">Uncalculated</option>
+              <option value="Current">Current</option>
+              <option value="Out of Date">Out of Date</option>
+              <option value="Review Required">Review Required</option>
+              <option value="In Progress">In Progress</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="form-group">
+            <label for="aff_result">Result</label>
+            <select class="form-control" id="aff_result">
+              <option value="">All results</option>
+              <option value="Qualifies">Qualifies</option>
+              <option value="Does not qualify">Does not qualify</option>
+              <option value="Uncalculated">Uncalculated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="affordability-filter-actions">
+        <button type="button" class="btn btn-primary" id="aff_apply">Apply Filters</button>
+        <button type="button" class="btn btn-default" id="aff_clear">Clear</button>
+        <span class="text-muted m-l-10"><span id="aff_count">18</span> records</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm affordability-tile">
+        <i class="fa fa-spinner affordability-tile-icon affordability-icon-navy"></i>
+        <div class="text-muted affordability-tile-label">In Progress</div>
+        <div class="affordability-tile-value">5</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm affordability-tile">
+        <i class="fa fa-check-circle affordability-tile-icon affordability-icon-green"></i>
+        <div class="text-muted affordability-tile-label">Qualifying</div>
+        <div class="affordability-tile-value">8</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm affordability-tile">
+        <i class="fa fa-exclamation-circle affordability-tile-icon affordability-icon-orange"></i>
+        <div class="text-muted affordability-tile-label">Review Required</div>
+        <div class="affordability-tile-value">3</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm affordability-tile">
+        <i class="fa fa-times-circle affordability-tile-icon affordability-icon-red"></i>
+        <div class="text-muted affordability-tile-label">Unsuccessful</div>
+        <div class="affordability-tile-value">2</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-8">
+          <h5 class="bold">Active Qualification Rules</h5>
+        </div>
+        <div class="col-md-4 text-right">
+          <a href="#" class="btn btn-default btn-sm">
+            <i class="fa fa-list"></i> View Rule Details
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <div class="affordability-rule">
+            <i class="fa fa-money"></i>
+            <span>Minimum qualifying amount: <strong>R100,000</strong></span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="affordability-rule">
+            <i class="fa fa-user"></i>
+            <span>Minimum Experian score: <strong>620</strong></span>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="affordability-rule">
+            <i class="fa fa-book"></i>
+            <span>Rule version: <strong>AFF-3.9</strong> &middot; Effective <strong>01 Sep 2026</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-muted m-t-10">
+        <small>For joint deals, the minimum amount applies to the combined result and the Experian rule is checked for every linked applicant.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Affordability Records</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group" id="aff_view_toggle">
+            <button type="button" class="btn btn-primary btn-sm active" data-view="active">Active</button>
+            <button type="button" class="btn btn-default btn-sm" data-view="history">History</button>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped affordability-table">
+          <thead>
+            <tr>
+              <th>Applicant / Deal</th>
+              <th>Type</th>
+              <th>Consultant</th>
+              <th>Experian</th>
+              <th>Latest qualifying amount</th>
+              <th>Calculation / Result</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="aff_tbody">
+
+            <tr class="aff-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Uncalculated"
+                data-result="Uncalculated"
+                data-search="Thandi Mokoena APP-2026-1058 Maria Schwan 654">
+              <td>
+                <strong>Thandi Mokoena</strong><br>
+                <span class="text-muted">APP-2026-1058</span>
+              </td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td>654</td>
+              <td><span class="text-muted">Not calculated</span></td>
+              <td>
+                <span class="text-muted">Uncalculated</span><br>
+                <small class="text-muted">Ready to start</small>
+              </td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-primary btn-xs">Start Review</a>
+              </td>
+            </tr>
+
+            <tr class="aff-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Priya Naidoo"
+                data-status="Current"
+                data-result="Qualifies"
+                data-search="Dlamini Property Purchase JD-2026-1049 Priya Naidoo 654 637">
+              <td>
+                <strong>Dlamini Property Purchase</strong><br>
+                <span class="text-muted">JD-2026-1049</span><br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Joint Deal</td>
+              <td>Priya Naidoo</td>
+              <td>654 / 637</td>
+              <td>R1,460,000</td>
+              <td>
+                <span class="text-success">Current - Qualifies</span><br>
+                <small class="text-muted">Calculated 01 Sep 2026</small>
+              </td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-primary btn-xs">Choose Route</a>
+              </td>
+            </tr>
+
+            <tr class="aff-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Neil Petersen"
+                data-status="Review Required"
+                data-result="Does not qualify"
+                data-search="Aisha Daniels APP-2026-1038 Neil Petersen 590">
+              <td>
+                <strong>Aisha Daniels</strong><br>
+                <span class="text-muted">APP-2026-1038</span>
+              </td>
+              <td>Individual</td>
+              <td>Neil Petersen</td>
+              <td>590</td>
+              <td><span class="text-muted">R80,000</span></td>
+              <td>
+                <span class="text-danger">Unsuccessful</span><br>
+                <small class="text-muted">Below active rules</small>
+              </td>
+              <td>
+                <a href="unsuccessful_outcome.html" class="btn btn-default btn-xs">View Outcome</a>
+              </td>
+            </tr>
+
+            <tr class="aff-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Maria Schwan"
+                data-status="Out of Date"
+                data-result="Qualifies"
+                data-search="Jacobs Family Home JD-2026-1044 Maria Schwan 645 632 621">
+              <td>
+                <strong>Jacobs Family Home</strong><br>
+                <span class="text-muted">JD-2026-1044</span><br>
+                <small class="text-muted">3 applicants</small>
+              </td>
+              <td>Joint Deal</td>
+              <td>Maria Schwan</td>
+              <td>645 / 632 / 621</td>
+              <td>R1,120,000</td>
+              <td>
+                <span class="text-warning">Out of Date</span><br>
+                <small class="text-muted">Applicant information changed</small>
+              </td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-default btn-xs">Recalculate</a>
+              </td>
+            </tr>
+
+            <tr class="aff-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Current"
+                data-result="Qualifies"
+                data-search="Mandla Khumalo APP-2026-1015 Maria Schwan 671">
+              <td>
+                <strong>Mandla Khumalo</strong><br>
+                <span class="text-muted">APP-2026-1015</span>
+              </td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td>671</td>
+              <td>R890,000</td>
+              <td>
+                <span class="text-success">Current - Qualifies</span><br>
+                <small class="text-muted">Calculated 01 Sep 2026</small>
+              </td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-primary btn-xs">Choose Route</a>
+              </td>
+            </tr>
+
+            <tr class="aff-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Neil Petersen"
+                data-status="In Progress"
+                data-result="Uncalculated"
+                data-search="Mokoena Joint Application JD-2026-1044 Neil Petersen 654 630">
+              <td>
+                <strong>Mokoena Joint Application</strong><br>
+                <span class="text-muted">JD-2026-1044</span><br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Joint Deal</td>
+              <td>Neil Petersen</td>
+              <td>654 / 630</td>
+              <td><span class="text-muted">Pending</span></td>
+              <td>
+                <span class="text-info">In Progress</span><br>
+                <small class="text-muted">Expense confirmation needed</small>
+              </td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-primary btn-xs">Continue</a>
+              </td>
+            </tr>
+
+            <tr class="aff-row"
+                data-view="history"
+                data-type="Individual"
+                data-consultant="Priya Naidoo"
+                data-status="Current"
+                data-result="Qualifies"
+                data-search="Peter Jacobs APP-2026-1044 Priya Naidoo 655">
+              <td>
+                <strong>Peter Jacobs</strong><br>
+                <span class="text-muted">APP-2026-1044</span><br>
+                <small class="text-muted">Attempt 2</small>
+              </td>
+              <td>Individual</td>
+              <td>Priya Naidoo</td>
+              <td>655</td>
+              <td>R720,000</td>
+              <td>
+                <span class="text-success">Current - Qualifies</span><br>
+                <small class="text-muted">Calculated 28 Aug 2026</small>
+              </td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-default btn-xs">View</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="aff_empty" class="text-muted text-center m-t-15" style="display:none;">
+        No affordability records match your filters.
+      </div>
+
+      <div class="row affordability-pagination">
+        <div class="col-md-6">
+          <span class="text-muted">Showing <span id="aff_showing">6</span> of 18</span>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">Previous</button>
+            <button type="button" class="btn btn-primary btn-sm active">1</button>
+            <button type="button" class="btn btn-default btn-sm">2</button>
+            <button type="button" class="btn btn-default btn-sm">3</button>
+            <button type="button" class="btn btn-default btn-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-question-circle text-info"></i> What Happens Next?</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="affordability-next-list">
+            <li>Open the selected record and complete the approved inputs.</li>
+            <li>Save and recalculate — calculated outputs cannot be manually overwritten.</li>
+            <li>If the record qualifies, choose Buyer's Certificate or Proceed to Submit to Bank.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-lock text-info"></i> Calculation Safeguards</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="affordability-next-list">
+            <li>Changing financial information makes the current result and any unissued output out of date.</li>
+            <li>Joint deals use one approved combined calculation.</li>
+            <li>Every calculation retains its rule version, user, date and history.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Only records belonging to your franchise are shown. Detailed income, expenses, RTI, DTI, loan terms and calculation breakdowns are available on the selected record's Affordability Review page.
+  </div>
+
+</div></div></div>
+
+<style>
+.affordability-filter-actions{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+
+.affordability-tile{margin-bottom:15px;}
+.affordability-tile-icon{font-size:20px;margin-bottom:6px;display:block;}
+.affordability-icon-navy{color:#1f2d3d;}
+.affordability-icon-green{color:#1f9d55;}
+.affordability-icon-orange{color:#e08b1f;}
+.affordability-icon-red{color:#d92d20;}
+.affordability-tile-label{font-size:12px;margin-bottom:4px;}
+.affordability-tile-value{font-size:26px;font-weight:600;color:#111827;}
+
+.affordability-rule{
+  display:flex;align-items:center;gap:8px;
+  font-size:13px;padding:6px 0;
+}
+.affordability-rule i{color:#2563eb;}
+
+.affordability-table td{vertical-align:middle;}
+.affordability-pagination{margin-top:10px;}
+
+.affordability-next-list{padding-left:18px;margin-bottom:0;font-size:13px;}
+.affordability-next-list li{margin-bottom:6px;}
+.affordability-next-list li:last-child{margin-bottom:0;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .affordability-filter-actions{flex-direction:column;align-items:stretch;}
+  .affordability-filter-actions .btn{width:100%;}
+  .affordability-tile-value{font-size:22px;}
+}
+</style>
+
+<script>
+(function(){
+  var rows       = document.querySelectorAll('.aff-row');
+  var searchEl   = document.getElementById('aff_search');
+  var typeEl     = document.getElementById('aff_type');
+  var consEl     = document.getElementById('aff_consultant');
+  var statusEl   = document.getElementById('aff_status');
+  var resultEl   = document.getElementById('aff_result');
+  var applyBtn   = document.getElementById('aff_apply');
+  var clearBtn   = document.getElementById('aff_clear');
+  var countEl    = document.getElementById('aff_count');
+  var showingEl  = document.getElementById('aff_showing');
+  var emptyEl    = document.getElementById('aff_empty');
+  var viewBtns   = document.querySelectorAll('#aff_view_toggle button');
+
+  var currentView = 'active';
+
+  function applyFilters(){
+    var q  = (searchEl.value || '').toLowerCase().trim();
+    var t  = typeEl.value;
+    var c  = consEl.value;
+    var s  = statusEl.value;
+    var r  = resultEl.value;
+    var shown = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var rowSearch = (row.getAttribute('data-search') || '').toLowerCase();
+      var rowType   = row.getAttribute('data-type') || '';
+      var rowCons   = row.getAttribute('data-consultant') || '';
+      var rowStatus = row.getAttribute('data-status') || '';
+      var rowResult = row.getAttribute('data-result') || '';
+      var rowView   = row.getAttribute('data-view') || '';
+
+      var okView   = (rowView === currentView);
+      var okSearch = (!q || rowSearch.indexOf(q) > -1);
+      var okType   = (!t || rowType === t);
+      var okCons   = (!c || rowCons === c);
+      var okStatus = (!s || rowStatus === s);
+      var okResult = (!r || rowResult === r);
+
+      if (okView && okSearch && okType && okCons && okStatus && okResult) {
+        row.style.display = '';
+        shown++;
+      } else {
+        row.style.display = 'none';
+      }
+    }
+
+    countEl.textContent   = shown;
+    showingEl.textContent = shown;
+    emptyEl.style.display = shown === 0 ? '' : 'none';
+  }
+
+  searchEl.addEventListener('input', applyFilters);
+  typeEl.addEventListener('change', applyFilters);
+  consEl.addEventListener('change', applyFilters);
+  statusEl.addEventListener('change', applyFilters);
+  resultEl.addEventListener('change', applyFilters);
+
+  applyBtn.addEventListener('click', function(e){ e.preventDefault(); applyFilters(); });
+
+  clearBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    searchEl.value = '';
+    typeEl.value = '';
+    consEl.value = '';
+    statusEl.value = '';
+    resultEl.value = '';
+    applyFilters();
+  });
+
+  for (var i = 0; i < viewBtns.length; i++) {
+    viewBtns[i].addEventListener('click', function(){
+      for (var k = 0; k < viewBtns.length; k++) {
+        viewBtns[k].classList.remove('active', 'btn-primary');
+        viewBtns[k].classList.add('btn-default');
+      }
+      this.classList.remove('btn-default');
+      this.classList.add('btn-primary', 'active');
+
+      currentView = this.getAttribute('data-view');
+      applyFilters();
+    });
+  }
+
+  applyFilters();
+})();
+</script>
+
+</body>
+
+</html>

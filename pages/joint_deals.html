@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Joint Deals</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee joint_deals user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Joint Deals</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Create Joint Deal
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        View linked applicants and open a deal for combined review.
+      </div>
+
+      <h5 class="bold">Search and filter deals</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="jd_search">Search</label>
+            <input type="text" class="form-control" id="jd_search" placeholder="Deal, applicant or property">
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="jd_consultant">Consultant</label>
+            <select class="form-control" id="jd_consultant">
+              <option value="">All consultants</option>
+              <option value="Maria Schwan">Maria Schwan</option>
+              <option value="Priya Naidoo">Priya Naidoo</option>
+              <option value="Neil Petersen">Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="jd_stage">Pipeline Stage</label>
+            <select class="form-control" id="jd_stage">
+              <option value="">All stages</option>
+              <option value="New Application">New Application</option>
+              <option value="Incomplete">Incomplete</option>
+              <option value="Affordability Check">Affordability Check</option>
+              <option value="Submitted to Banks">Submitted to Banks</option>
+              <option value="Approved">Approved</option>
+              <option value="Declined">Declined</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="jd_status">Working Status</label>
+            <select class="form-control" id="jd_status">
+              <option value="">All statuses</option>
+              <option value="Affordability in Progress">Affordability in Progress</option>
+              <option value="Pre-Approval Ready">Pre-Approval Ready</option>
+              <option value="Stage 2 Preparation">Stage 2 Preparation</option>
+              <option value="Submitted to Head Office">Submitted to Head Office</option>
+              <option value="Missing Information">Missing Information</option>
+              <option value="Unsuccessful Outcome">Unsuccessful Outcome</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="joint-deals-filter-actions">
+              <button type="button" class="btn btn-primary" id="jd_apply">Apply Filters</button>
+              <button type="button" class="btn btn-default" id="jd_clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-muted joint-deals-result-count">
+        <span id="jd_count">14</span> joint deals
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm joint-deals-tile">
+        <div class="text-muted joint-deals-tile-label">Active Joint Deals</div>
+        <div class="joint-deals-tile-value">14</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm joint-deals-tile">
+        <div class="text-muted joint-deals-tile-label">Affordability in Progress</div>
+        <div class="joint-deals-tile-value">5</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm joint-deals-tile">
+        <div class="text-muted joint-deals-tile-label">Pre-Approval Ready</div>
+        <div class="joint-deals-tile-value">4</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm joint-deals-tile">
+        <div class="text-muted joint-deals-tile-label">Stage 2 Preparation</div>
+        <div class="joint-deals-tile-value">3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm joint-deals-tile">
+        <div class="text-muted joint-deals-tile-label">Submitted to Head Office</div>
+        <div class="joint-deals-tile-value">2</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">All Joint Deals</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group" id="jd_view_toggle">
+            <button type="button" class="btn btn-primary btn-sm active" data-view="active">Active</button>
+            <button type="button" class="btn btn-default btn-sm" data-view="archived">Archived</button>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped joint-deals-table">
+          <thead>
+            <tr>
+              <th>Deal</th>
+              <th>Linked applicants</th>
+              <th>Property</th>
+              <th>Consultant</th>
+              <th>Pipeline &amp; status</th>
+              <th>Affordability</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="jd_tbody">
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Affordability Check"
+                data-status="Pre-Approval Ready"
+                data-consultant="Priya Naidoo"
+                data-search="Dlamini Property Purchase JD-2026-1049 Lerato Dlamini Kabelo Dlamini Hartor View Priya Naidoo">
+              <td>
+                <strong>Dlamini Property Purchase</strong><br>
+                <span class="text-muted">JD-2026-1049</span>
+              </td>
+              <td>
+                Lerato Dlamini (Primary)<br>
+                Kabelo Dlamini<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Hartor View</td>
+              <td>Priya Naidoo</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Pre-Approval Ready</small>
+              </td>
+              <td>R2,680,000 <br><small class="text-success">Qualifies</small></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-primary btn-xs">Open Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Affordability Check"
+                data-status="Affordability in Progress"
+                data-consultant="Maria Schwan"
+                data-search="Mokoena Home JD-2026-1058 Thandi Mokoena Nkuluma Mokoena Hartor View Maria Schwan">
+              <td>
+                <strong>Mokoena Home</strong><br>
+                <span class="text-muted">JD-2026-1058</span>
+              </td>
+              <td>
+                Thandi Mokoena (Primary)<br>
+                Nkuluma Mokoena<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Hartor View</td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Affordability in Progress</small>
+              </td>
+              <td><span class="text-warning">Calculating</span></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-primary btn-xs">Open Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Affordability Check"
+                data-status="Stage 2 Preparation"
+                data-consultant="Maria Schwan"
+                data-search="Adams & Mofolo Purchase JD-2026-1052 Jason Adams Peter Mofolo Green Point Residences Maria Schwan">
+              <td>
+                <strong>Adams &amp; Mofolo Purchase</strong><br>
+                <span class="text-muted">JD-2026-1052</span>
+              </td>
+              <td>
+                Jason Adams (Primary)<br>
+                Peter Mofolo<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Green Point Residences</td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Stage 2 Preparation</small>
+              </td>
+              <td>R1,980,000 <br><small class="text-success">Qualifies</small></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-primary btn-xs">Open Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Submitted to Banks"
+                data-status="Submitted to Head Office"
+                data-consultant="Neil Petersen"
+                data-search="Botha Property Purchase JD-2026-1019 Lerato Botha Sipho Botha Anika Botha Unit Pending Neil Petersen">
+              <td>
+                <strong>Botha Property Purchase</strong><br>
+                <span class="text-muted">JD-2026-1019</span>
+              </td>
+              <td>
+                Lerato Botha (Primary)<br>
+                Sipho Botha<br>
+                Anika Botha<br>
+                <small class="text-muted">3 applicants</small>
+              </td>
+              <td>Unit pending</td>
+              <td>Neil Petersen</td>
+              <td>
+                <span class="label label-warning">Submitted to Banks</span><br>
+                <small class="text-muted">Submitted to Head Office</small>
+              </td>
+              <td>R1,100,000 <br><small class="text-muted">Submitted</small></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-default btn-xs">View Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Affordability Check"
+                data-status="Pre-Approval Ready"
+                data-consultant="Priya Naidoo"
+                data-search="Daniels Joint Application JD-2026-1038 Aisha Daniels Silubuso Dlamini No property selected Priya Naidoo">
+              <td>
+                <strong>Daniels Joint Application</strong><br>
+                <span class="text-muted">JD-2026-1038</span>
+              </td>
+              <td>
+                Aisha Daniels (Primary)<br>
+                Silubuso Dlamini<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>No property selected</td>
+              <td>Priya Naidoo</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Pre-Approval Ready</small>
+              </td>
+              <td>R1,240,000 <br><small class="text-success">Qualifies</small></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-primary btn-xs">Open Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Affordability Check"
+                data-status="Stage 2 Preparation"
+                data-consultant="Priya Naidoo"
+                data-search="Khumalo Home Purchase JD-2026-1015 Mandla Khumalo Zanelle Khumalo Hartor View Priya Naidoo">
+              <td>
+                <strong>Khumalo Home Purchase</strong><br>
+                <span class="text-muted">JD-2026-1015</span>
+              </td>
+              <td>
+                Mandla Khumalo (Primary)<br>
+                Zanelle Khumalo<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Hartor View</td>
+              <td>Priya Naidoo</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Stage 2 Preparation</small>
+              </td>
+              <td>R1,460,000 <br><small class="text-success">Qualifies</small></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-primary btn-xs">Open Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Incomplete"
+                data-status="Missing Information"
+                data-consultant="Maria Schwan"
+                data-search="Jacobs Family Home JD-2026-1044 Peter Jacobs Megan Jacobs No property selected Maria Schwan">
+              <td>
+                <strong>Jacobs Family Home</strong><br>
+                <span class="text-muted">JD-2026-1044</span>
+              </td>
+              <td>
+                Peter Jacobs (Primary)<br>
+                Megan Jacobs<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>No property selected</td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-warning">Incomplete</span><br>
+                <small class="text-muted">Missing Information</small>
+              </td>
+              <td><span class="text-muted">Blocked</span></td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-primary btn-xs">Open Deal</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="active"
+                data-stage="Declined"
+                data-status="Unsuccessful Outcome"
+                data-consultant="Priya Naidoo"
+                data-search="Masoko Property Deal JD-2026-0998 Karabo Masoko Lindwe Masoko Cape Gate Estate Priya Naidoo">
+              <td>
+                <strong>Masoko Property Deal</strong><br>
+                <span class="text-muted">JD-2026-0998</span>
+              </td>
+              <td>
+                Karabo Masoko (Primary)<br>
+                Lindwe Masoko<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Cape Gate Estate</td>
+              <td>Priya Naidoo</td>
+              <td>
+                <span class="label label-danger">Declined</span><br>
+                <small class="text-muted">Unsuccessful Outcome</small>
+              </td>
+              <td>R85,000 <br><small class="text-danger">Does not qualify</small></td>
+              <td>
+                <a href="unsuccessful_outcome.html" class="btn btn-default btn-xs">View Outcome</a>
+              </td>
+            </tr>
+
+            <tr class="jd-row"
+                data-view="archived"
+                data-stage="Approved"
+                data-status="Bond Accepted"
+                data-consultant="Maria Schwan"
+                data-search="Naidoo Family Bond JD-2026-0901 Priya Naidoo Rajesh Naidoo Bellville Maria Schwan">
+              <td>
+                <strong>Naidoo Family Bond</strong><br>
+                <span class="text-muted">JD-2026-0901</span>
+              </td>
+              <td>
+                Priya Naidoo (Primary)<br>
+                Rajesh Naidoo<br>
+                <small class="text-muted">2 applicants</small>
+              </td>
+              <td>Bellville</td>
+              <td>Maria Schwan</td>
+              <td>
+                <span class="label label-success">Approved</span><br>
+                <small class="text-muted">Bond Accepted</small>
+              </td>
+              <td>R1,320,000 <br><small class="text-muted">Completed</small></td>
+              <td>
+                <a href="registration_overview.html" class="btn btn-default btn-xs">View Deal</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="jd_empty" class="text-muted text-center m-t-15" style="display:none;">
+        No joint deals match your filters.
+      </div>
+
+      <div class="row joint-deals-pagination">
+        <div class="col-md-6">
+          <span class="text-muted">Showing <span id="jd_showing">8</span> of 14</span>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">Previous</button>
+            <button type="button" class="btn btn-primary btn-sm active">1</button>
+            <button type="button" class="btn btn-default btn-sm">2</button>
+            <button type="button" class="btn btn-default btn-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <h5 class="bold">Joint Deal Rules</h5>
+      <hr class="hr-panel-heading" />
+      <ul class="joint-deals-rules-list">
+        <li>Maximum four applicants per deal.</li>
+        <li>Applicants must belong to the same franchise.</li>
+        <li>Each application may have only one active deal.</li>
+        <li>Changes to applicants, property, financial information or Subject to Sale require a new calculation and may make later outputs out of date.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Open a deal to manage linked applicants, property details, combined affordability, documents and history. Joint deals count as one transaction through bond processing and registration.
+  </div>
+
+</div></div></div>
+
+<style>
+.joint-deals-filter-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.joint-deals-result-count{margin-top:5px;}
+
+.joint-deals-tile{margin-bottom:15px;}
+.joint-deals-tile-label{font-size:12px;margin-bottom:4px;}
+.joint-deals-tile-value{font-size:26px;font-weight:600;color:#111827;}
+
+.joint-deals-table td{vertical-align:middle;}
+.joint-deals-pagination{margin-top:10px;}
+
+.joint-deals-rules-list{padding-left:18px;margin-bottom:0;font-size:13px;}
+.joint-deals-rules-list li{margin-bottom:6px;}
+.joint-deals-rules-list li:last-child{margin-bottom:0;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .joint-deals-filter-actions{flex-direction:column;}
+  .joint-deals-filter-actions .btn{width:100%;}
+  .joint-deals-tile-value{font-size:22px;}
+}
+</style>
+
+<script>
+(function(){
+  var rows       = document.querySelectorAll('.jd-row');
+  var searchEl   = document.getElementById('jd_search');
+  var consultant = document.getElementById('jd_consultant');
+  var stageEl    = document.getElementById('jd_stage');
+  var statusEl   = document.getElementById('jd_status');
+  var applyBtn   = document.getElementById('jd_apply');
+  var clearBtn   = document.getElementById('jd_clear');
+  var countEl    = document.getElementById('jd_count');
+  var showingEl  = document.getElementById('jd_showing');
+  var emptyEl    = document.getElementById('jd_empty');
+  var viewBtns   = document.querySelectorAll('#jd_view_toggle button');
+
+  var currentView = 'active';
+
+  function applyFilters(){
+    var q  = (searchEl.value || '').toLowerCase().trim();
+    var c  = consultant.value;
+    var s  = stageEl.value;
+    var st = statusEl.value;
+    var shown = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var rowSearch = (row.getAttribute('data-search') || '').toLowerCase();
+      var rowStage  = row.getAttribute('data-stage') || '';
+      var rowStatus = row.getAttribute('data-status') || '';
+      var rowCons   = row.getAttribute('data-consultant') || '';
+      var rowView   = row.getAttribute('data-view') || '';
+
+      var okView   = (rowView === currentView);
+      var okSearch = (!q || rowSearch.indexOf(q) > -1);
+      var okCons   = (!c || rowCons === c);
+      var okStage  = (!s || rowStage === s);
+      var okStatus = (!st || rowStatus === st);
+
+      if (okView && okSearch && okCons && okStage && okStatus) {
+        row.style.display = '';
+        shown++;
+      } else {
+        row.style.display = 'none';
+      }
+    }
+
+    countEl.textContent   = shown;
+    showingEl.textContent = shown;
+    emptyEl.style.display = shown === 0 ? '' : 'none';
+  }
+
+  searchEl.addEventListener('input', applyFilters);
+  consultant.addEventListener('change', applyFilters);
+  stageEl.addEventListener('change', applyFilters);
+  statusEl.addEventListener('change', applyFilters);
+
+  applyBtn.addEventListener('click', function(e){ e.preventDefault(); applyFilters(); });
+
+  clearBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    searchEl.value = '';
+    consultant.value = '';
+    stageEl.value = '';
+    statusEl.value = '';
+    applyFilters();
+  });
+
+  for (var i = 0; i < viewBtns.length; i++) {
+    viewBtns[i].addEventListener('click', function(){
+      for (var k = 0; k < viewBtns.length; k++) {
+        viewBtns[k].classList.remove('active', 'btn-primary');
+        viewBtns[k].classList.add('btn-default');
+      }
+      this.classList.remove('btn-default');
+      this.classList.add('btn-primary', 'active');
+
+      currentView = this.getAttribute('data-view');
+      applyFilters();
+    });
+  }
+
+  applyFilters();
+})();
+</script>
+
+</body>
+
+</html>

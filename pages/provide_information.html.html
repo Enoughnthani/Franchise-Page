@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Provide Information</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee provide_information user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Provide Information</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="bond_application.html" class="btn btn-default">
+            <i class="fa fa-arrow-left"></i> Back to Bond Application
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-warning">
+        <i class="fa fa-lock"></i>
+        <strong>Controlled action.</strong> This page is only available while a request is outstanding. Your editing is limited to the items listed below.
+      </div>
+
+      <div class="provide-info-mode-toggle btn-group" id="pi_mode_toggle">
+        <button type="button" class="btn btn-primary btn-sm active" data-mode="returned">Returned for Correction</button>
+        <button type="button" class="btn btn-default btn-sm" data-mode="further">Further Information Requested</button>
+      </div>
+      <div class="text-muted m-t-5">
+        <small>Demo toggle — in production this page opens in whichever state applies to the current request.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s pi-state" data-state="returned">
+    <div class="panel-body">
+      <h5 class="bold">Request Details</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-danger">
+        <i class="fa fa-undo"></i>
+        <strong>Returned for Correction.</strong> Head Office reviewed the submitted package and requires corrections before it can be accepted for bond processing.
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Request type</small></div>
+            <strong>Returned for Correction</strong>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Requested by</small></div>
+            <strong>Head Office Sales Support</strong>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Applicant / Deal</small></div>
+            <strong>Nandi Mafele</strong>
+            <div class="text-muted">APP-2026-1002</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Due date</small></div>
+            <strong class="text-danger">09 Sep 2026</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="well well-sm">
+        <strong>Reason for the request:</strong>
+        Latest bank statement is unreadable and employment start date could not be confirmed from the submitted payslip.
+      </div>
+
+      <h5 class="bold m-t-15">Items to correct</h5>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Applies to</th>
+              <th>Action required</th>
+              <th>Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Latest bank statement</td>
+              <td>Nandi Mafele</td>
+              <td>Upload a clear PDF of the latest 3 months</td>
+              <td><input type="file" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Employment start date</td>
+              <td>Nandi Mafele</td>
+              <td>Confirm the start date</td>
+              <td><input type="text" class="form-control" placeholder="e.g. 15 March 2022"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="form-group">
+        <label for="pi_reason_returned">Response note</label>
+        <textarea class="form-control" id="pi_reason_returned" rows="3" placeholder="Explain what was changed or provided..."></textarea>
+      </div>
+
+      <div class="pi-file-rules">
+        <strong>File rules:</strong> Maximum 5 MB. PDF, JPG, JPEG and PNG only.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s pi-state" data-state="further" style="display:none;">
+    <div class="panel-body">
+      <h5 class="bold">Request Details</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-warning">
+        <i class="fa fa-question-circle"></i>
+        <strong>Further Information Requested.</strong> A bank or EvoGroup has asked for additional items. The response is routed through Head Office, not sent directly to the bank.
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Request type</small></div>
+            <strong>Further Information Requested</strong>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Requesting institution</small></div>
+            <strong>ABSA</strong>
+            <div class="text-muted">via Head Office</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Applicant / Deal</small></div>
+            <strong>Mandla Khumalo</strong>
+            <div class="text-muted">BA-2026-0068</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="well well-sm">
+            <div class="text-muted"><small>Request date / Due date</small></div>
+            <strong>07 Sep 2026</strong>
+            <div class="text-muted">Due 11 Sep 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="well well-sm">
+        <strong>Request from the bank:</strong>
+        ABSA requested an updated payslip reflecting the latest salary increase.
+      </div>
+
+      <h5 class="bold m-t-15">Items to provide</h5>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Applies to</th>
+              <th>Action required</th>
+              <th>Response</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Updated payslip</td>
+              <td>Mandla Khumalo</td>
+              <td>Upload the latest payslip showing the salary increase</td>
+              <td><input type="file" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Supporting explanation</td>
+              <td>Mandla Khumalo</td>
+              <td>Note the effective date and any conditions</td>
+              <td><input type="text" class="form-control" placeholder="Effective date and any conditions"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="form-group">
+        <label for="pi_reason_further">Response note</label>
+        <textarea class="form-control" id="pi_reason_further" rows="3" placeholder="Explain what you are providing and any context..."></textarea>
+      </div>
+
+      <div class="pi-file-rules">
+        <strong>File rules:</strong> Maximum 5 MB. PDF, JPG, JPEG and PNG only.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="pi-actions">
+        <button type="button" class="btn btn-primary" id="pi_submit">
+          <i class="fa fa-upload"></i> Submit to Head Office
+        </button>
+        <button type="button" class="btn btn-default" id="pi_save_draft">
+          <i class="fa fa-save"></i> Save Draft
+        </button>
+        <a href="bond_application.html" class="btn btn-default">
+          <i class="fa fa-times"></i> Cancel
+        </a>
+      </div>
+
+      <div class="pi-routing-note">
+        <i class="fa fa-info-circle"></i>
+        Your response goes to Head Office. It does not go directly to the bank. Earlier submission versions and documents remain in history.
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    After Head Office accepts the response, general editing access returns to view-only. Only the fields and documents specifically requested on this page may be edited.
+  </div>
+
+</div></div></div>
+
+<style>
+.provide-info-mode-toggle{margin-top:5px;}
+
+.pi-kv td{padding:6px 4px!important;border-top:1px dashed #eef2f4!important;}
+
+.pi-file-rules{
+  margin-top:10px;font-size:12px;color:#6b7280;
+}
+
+.pi-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.pi-routing-note{
+  margin-top:10px;font-size:13px;color:#4b5563;
+}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .pi-actions{flex-direction:column;align-items:stretch;}
+  .pi-actions .btn{width:100%;}
+}
+</style>
+
+<script>
+(function(){
+  var modeBtns = document.querySelectorAll('#pi_mode_toggle button');
+  var states   = document.querySelectorAll('.pi-state');
+  var submit   = document.getElementById('pi_submit');
+  var draft    = document.getElementById('pi_save_draft');
+
+  function setMode(mode){
+    for (var i = 0; i < modeBtns.length; i++) {
+      modeBtns[i].classList.remove('active', 'btn-primary');
+      modeBtns[i].classList.add('btn-default');
+    }
+    for (var j = 0; j < modeBtns.length; j++) {
+      if (modeBtns[j].getAttribute('data-mode') === mode) {
+        modeBtns[j].classList.remove('btn-default');
+        modeBtns[j].classList.add('btn-primary', 'active');
+      }
+    }
+    for (var k = 0; k < states.length; k++) {
+      states[k].style.display = states[k].getAttribute('data-state') === mode ? '' : 'none';
+    }
+  }
+
+  for (var i = 0; i < modeBtns.length; i++) {
+    modeBtns[i].addEventListener('click', function(){
+      setMode(this.getAttribute('data-mode'));
+    });
+  }
+
+  function flash(btn, message, success){
+    var original = btn.innerHTML;
+    var cls = btn.className;
+    btn.innerHTML = '<i class="fa fa-check"></i> ' + message;
+    btn.classList.remove('btn-primary', 'btn-default');
+    if (success) btn.classList.add('btn-success');
+    btn.disabled = true;
+    setTimeout(function(){
+      btn.innerHTML = original;
+      btn.className = cls;
+      btn.disabled = false;
+    }, 1400);
+  }
+
+  if (submit) submit.addEventListener('click', function(){
+    var self = this;
+    var original = self.innerHTML;
+    self.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Submitting...';
+    self.disabled = true;
+    setTimeout(function(){
+      self.innerHTML = '<i class="fa fa-check"></i> Submitted to Head Office';
+      self.classList.remove('btn-primary');
+      self.classList.add('btn-success');
+      setTimeout(function(){
+        self.innerHTML = original;
+        self.classList.remove('btn-success');
+        self.classList.add('btn-primary');
+        self.disabled = false;
+      }, 1500);
+    }, 700);
+  });
+
+  if (draft) draft.addEventListener('click', function(){
+    flash(this, 'Draft saved', false);
+  });
+})();
+</script>
+
+</body>
+
+</html>

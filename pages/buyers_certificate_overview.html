@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Buyer's Certificate</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee buyers_certificate user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Buyer's Certificate</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-default">
+            <i class="fa fa-download"></i> Export List
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Manage qualifying applicants, certificate preparation and issued certificates.
+      </div>
+
+      <h5 class="bold">Search and filter certificates</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="bc_search">Search</label>
+            <input type="text" class="form-control" id="bc_search" placeholder="Applicant, deal or certificate">
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="bc_consultant">Consultant</label>
+            <select class="form-control" id="bc_consultant">
+              <option value="">All consultants</option>
+              <option value="Maria Schwan">Maria Schwan</option>
+              <option value="Priya Naidoo">Priya Naidoo</option>
+              <option value="Neil Petersen">Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="bc_type">Record Type</label>
+            <select class="form-control" id="bc_type">
+              <option value="">All record types</option>
+              <option value="Individual">Individual</option>
+              <option value="Joint Deal">Joint Deal</option>
+              <option value="Multiple Deal">Multiple Deal</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="bc_status">Certificate Status</label>
+            <select class="form-control" id="bc_status">
+              <option value="">All statuses</option>
+              <option value="Ready to Generate">Ready to Generate</option>
+              <option value="Draft">Draft</option>
+              <option value="Issued &amp; Active">Issued &amp; Active</option>
+              <option value="Out of Date">Out of Date</option>
+              <option value="Awaiting Approval">Awaiting Approval</option>
+              <option value="Does Not Qualify">Does Not Qualify</option>
+              <option value="Expired">Expired</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="form-group">
+            <label for="bc_validity">Validity</label>
+            <select class="form-control" id="bc_validity">
+              <option value="">All validity</option>
+              <option value="valid">Currently valid</option>
+              <option value="expiring">Expiring soon (7 days)</option>
+              <option value="expired">Expired</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="buyers-certificate-filter-actions">
+        <button type="button" class="btn btn-primary" id="bc_apply">Apply Filters</button>
+        <button type="button" class="btn btn-default" id="bc_clear">Clear</button>
+        <span class="text-muted m-l-10"><span id="bc_count">18</span> records</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm buyers-certificate-tile">
+        <i class="fa fa-file-text-o buyers-certificate-tile-icon buyers-icon-navy"></i>
+        <div class="text-muted buyers-certificate-tile-label">Certificate Records</div>
+        <div class="buyers-certificate-tile-value">18</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm buyers-certificate-tile">
+        <i class="fa fa-magic buyers-certificate-tile-icon buyers-icon-green"></i>
+        <div class="text-muted buyers-certificate-tile-label">Ready to Generate</div>
+        <div class="buyers-certificate-tile-value">5</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm buyers-certificate-tile">
+        <i class="fa fa-pencil-square-o buyers-certificate-tile-icon buyers-icon-blue"></i>
+        <div class="text-muted buyers-certificate-tile-label">Drafts</div>
+        <div class="buyers-certificate-tile-value">2</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm buyers-certificate-tile">
+        <i class="fa fa-check-circle buyers-certificate-tile-icon buyers-icon-green"></i>
+        <div class="text-muted buyers-certificate-tile-label">Issued &amp; Active</div>
+        <div class="buyers-certificate-tile-value">8</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm buyers-certificate-tile">
+        <i class="fa fa-exclamation-triangle buyers-certificate-tile-icon buyers-icon-orange"></i>
+        <div class="text-muted buyers-certificate-tile-label">Needs Attention</div>
+        <div class="buyers-certificate-tile-value">3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Certificate Records</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group" id="bc_view_toggle">
+            <button type="button" class="btn btn-primary btn-sm active" data-view="active">Active</button>
+            <button type="button" class="btn btn-default btn-sm" data-view="history">History</button>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped buyers-certificate-table">
+          <thead>
+            <tr>
+              <th>Applicant / Deal</th>
+              <th>Type</th>
+              <th>Consultant</th>
+              <th>Qualifying amount</th>
+              <th>Experian</th>
+              <th>Certificate status</th>
+              <th>Issue / Expiry</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bc_tbody">
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Ready to Generate"
+                data-validity=""
+                data-search="Thandi Mokoena APP-2026-1058 Maria Schwan 1420000 684">
+              <td>
+                <strong>Thandi Mokoena</strong><br>
+                <span class="text-muted">APP-2026-1058</span>
+              </td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td>R1,420,000</td>
+              <td>684</td>
+              <td><span class="label label-success">Ready to Generate</span></td>
+              <td><span class="text-muted">&mdash;</span></td>
+              <td>
+                <a href="buyers_certificate.html" class="btn btn-primary btn-xs">Open Certificate</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Priya Naidoo"
+                data-status="Draft"
+                data-validity=""
+                data-search="Dlamini Property Purchase JD-2026-1049 Priya Naidoo 2680000 654 637">
+              <td>
+                <strong>Dlamini Property Purchase</strong><br>
+                <span class="text-muted">JD-2026-1049</span>
+              </td>
+              <td>Joint Deal &middot; 2 applicants</td>
+              <td>Priya Naidoo</td>
+              <td>R2,680,000</td>
+              <td>654 / 637</td>
+              <td><span class="label label-info">Draft</span></td>
+              <td><span class="text-muted">&mdash;</span></td>
+              <td>
+                <a href="buyers_certificate.html" class="btn btn-default btn-xs">Continue</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Priya Naidoo"
+                data-status="Issued &amp; Active"
+                data-validity="valid"
+                data-search="Aisha Daniels APP-2026-1038 Priya Naidoo 1240000 655">
+              <td>
+                <strong>Aisha Daniels</strong><br>
+                <span class="text-muted">APP-2026-1038</span>
+              </td>
+              <td>Individual</td>
+              <td>Priya Naidoo</td>
+              <td>R1,240,000</td>
+              <td>655</td>
+              <td><span class="label label-success">Issued &amp; Active</span></td>
+              <td>28 Aug &mdash; 28 Nov 2026</td>
+              <td>
+                <a href="buyers_certificate_issued.html" class="btn btn-default btn-xs">View Issued</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Issued &amp; Active"
+                data-validity="valid"
+                data-search="Mandla Khumalo APP-2026-1015 Maria Schwan 1460000 642">
+              <td>
+                <strong>Mandla Khumalo</strong><br>
+                <span class="text-muted">APP-2026-1015</span>
+              </td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td>R1,460,000</td>
+              <td>642</td>
+              <td><span class="label label-success">Issued &amp; Active</span></td>
+              <td>20 Aug &mdash; 20 Nov 2026</td>
+              <td>
+                <a href="buyers_certificate_issued.html" class="btn btn-default btn-xs">View Issued</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Neil Petersen"
+                data-status="Out of Date"
+                data-validity="expiring"
+                data-search="Nandi Mafele APP-2026-1027 Neil Petersen 1980000 660">
+              <td>
+                <strong>Nandi Mafele</strong><br>
+                <span class="text-muted">APP-2026-1027</span>
+              </td>
+              <td>Individual</td>
+              <td>Neil Petersen</td>
+              <td>R1,980,000</td>
+              <td>660</td>
+              <td><span class="label label-warning">Out of Date</span></td>
+              <td>18 Aug 2026</td>
+              <td>
+                <a href="affordability_review.html" class="btn btn-default btn-xs">Review</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Awaiting Approval"
+                data-validity=""
+                data-search="Peter Jacobs APP-2026-1044 Maria Schwan 1100000 632">
+              <td>
+                <strong>Peter Jacobs</strong><br>
+                <span class="text-muted">APP-2026-1044</span>
+              </td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td>R1,100,000</td>
+              <td>632</td>
+              <td><span class="label label-info">Awaiting Approval</span></td>
+              <td><span class="text-muted">&mdash;</span></td>
+              <td>
+                <a href="buyers_certificate.html" class="btn btn-primary btn-xs">Open Certificate</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Priya Naidoo"
+                data-status="Does Not Qualify"
+                data-validity=""
+                data-search="Masoko Property Deal JD-2026-0998 Priya Naidoo 85000 598">
+              <td>
+                <strong>Masoko Property Deal</strong><br>
+                <span class="text-muted">JD-2026-0998</span>
+              </td>
+              <td>Joint Deal &middot; 2 applicants</td>
+              <td>Priya Naidoo</td>
+              <td>R85,000</td>
+              <td>598</td>
+              <td><span class="label label-danger">Does Not Qualify</span></td>
+              <td><span class="text-muted">&mdash;</span></td>
+              <td>
+                <a href="unsuccessful_outcome.html" class="btn btn-default btn-xs">View Outcome</a>
+              </td>
+            </tr>
+
+            <tr class="bc-row"
+                data-view="history"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Expired"
+                data-validity="expired"
+                data-search="Sipho Dlamini APP-2026-0901 Maria Schwan 1120000 640">
+              <td>
+                <strong>Sipho Dlamini</strong><br>
+                <span class="text-muted">APP-2026-0901</span>
+              </td>
+              <td>Individual</td>
+              <td>Maria Schwan</td>
+              <td>R1,120,000</td>
+              <td>640</td>
+              <td><span class="label label-default">Expired</span></td>
+              <td>10 May &mdash; 10 Aug 2026</td>
+              <td>
+                <a href="buyers_certificate_issued.html" class="btn btn-default btn-xs">View</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="bc_empty" class="text-muted text-center m-t-15" style="display:none;">
+        No certificate records match your filters.
+      </div>
+
+      <div class="row buyers-certificate-pagination">
+        <div class="col-md-6">
+          <span class="text-muted">Showing <span id="bc_showing">7</span> of 18</span>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">Previous</button>
+            <button type="button" class="btn btn-primary btn-sm active">1</button>
+            <button type="button" class="btn btn-default btn-sm">2</button>
+            <button type="button" class="btn btn-default btn-sm">3</button>
+            <button type="button" class="btn btn-default btn-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-info-circle text-info"></i> Certificate Rules</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="buyers-certificate-rules-list">
+            <li>Qualifying amount: at least R100,000.</li>
+            <li>Minimum Experian score: 620.</li>
+            <li>Validity: 3 months.</li>
+            <li>PDFs are locked and versioned.</li>
+            <li>Only qualifying records may generate a Buyer's Certificate.</li>
+            <li>Open a record to preview, generate, download or send the approved certificate.</li>
+          </ul>
+          <div class="text-right m-t-10">
+            <a href="#" class="btn btn-default btn-sm">
+              <i class="fa fa-book"></i> View Active Rule Version
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Linked Support</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="buyers-certificate-support">
+            <div class="buyers-certificate-support-icon"><i class="fa fa-headphones"></i></div>
+            <div>
+              <p class="m-b-5">Ticket status: <strong>No open ticket</strong></p>
+              <p class="text-muted m-b-5">Use a linked support ticket for questions about a certificate.</p>
+              <a href="support_tickets.html" class="btn btn-default btn-sm">
+                <i class="fa fa-life-ring"></i> Create Support Ticket
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Only records belonging to your franchise are shown. Issued certificates remain locked historical documents. Changes to financial information make the current calculation and any unissued certificate out of date.
+  </div>
+
+</div></div></div>
+
+<style>
+.buyers-certificate-filter-actions{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+
+.buyers-certificate-tile{margin-bottom:15px;}
+.buyers-certificate-tile-icon{font-size:20px;margin-bottom:6px;display:block;}
+.buyers-icon-navy{color:#1f2d3d;}
+.buyers-icon-green{color:#1f9d55;}
+.buyers-icon-blue{color:#2563eb;}
+.buyers-icon-orange{color:#e08b1f;}
+.buyers-certificate-tile-label{font-size:12px;margin-bottom:4px;}
+.buyers-certificate-tile-value{font-size:26px;font-weight:600;color:#111827;}
+
+.buyers-certificate-table td{vertical-align:middle;}
+.buyers-certificate-pagination{margin-top:10px;}
+
+.buyers-certificate-rules-list{padding-left:18px;margin-bottom:0;font-size:13px;}
+.buyers-certificate-rules-list li{margin-bottom:6px;}
+.buyers-certificate-rules-list li:last-child{margin-bottom:0;}
+
+.buyers-certificate-support{display:flex;gap:12px;align-items:flex-start;}
+.buyers-certificate-support-icon{
+  width:38px;height:38px;border-radius:50%;
+  background:#f2f4f7;color:#2f5d80;
+  display:flex;align-items:center;justify-content:center;flex:0 0 38px;
+}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .buyers-certificate-filter-actions{flex-direction:column;align-items:stretch;}
+  .buyers-certificate-filter-actions .btn{width:100%;}
+  .buyers-certificate-tile-value{font-size:22px;}
+}
+</style>
+
+<script>
+(function(){
+  var rows       = document.querySelectorAll('.bc-row');
+  var searchEl   = document.getElementById('bc_search');
+  var consEl     = document.getElementById('bc_consultant');
+  var typeEl     = document.getElementById('bc_type');
+  var statusEl   = document.getElementById('bc_status');
+  var validityEl = document.getElementById('bc_validity');
+  var applyBtn   = document.getElementById('bc_apply');
+  var clearBtn   = document.getElementById('bc_clear');
+  var countEl    = document.getElementById('bc_count');
+  var showingEl  = document.getElementById('bc_showing');
+  var emptyEl    = document.getElementById('bc_empty');
+  var viewBtns   = document.querySelectorAll('#bc_view_toggle button');
+
+  var currentView = 'active';
+
+  function applyFilters(){
+    var q  = (searchEl.value || '').toLowerCase().trim();
+    var c  = consEl.value;
+    var t  = typeEl.value;
+    var s  = statusEl.value;
+    var v  = validityEl.value;
+    var shown = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var rowSearch   = (row.getAttribute('data-search') || '').toLowerCase();
+      var rowType     = row.getAttribute('data-type') || '';
+      var rowCons     = row.getAttribute('data-consultant') || '';
+      var rowStatus   = row.getAttribute('data-status') || '';
+      var rowValidity = row.getAttribute('data-validity') || '';
+      var rowView     = row.getAttribute('data-view') || '';
+
+      var okView   = (rowView === currentView);
+      var okSearch = (!q || rowSearch.indexOf(q) > -1);
+      var okType   = (!t || rowType === t);
+      var okCons   = (!c || rowCons === c);
+      var okStatus = (!s || rowStatus === s);
+      var okValid  = (!v || rowValidity === v);
+
+      if (okView && okSearch && okType && okCons && okStatus && okValid) {
+        row.style.display = '';
+        shown++;
+      } else {
+        row.style.display = 'none';
+      }
+    }
+
+    countEl.textContent   = shown;
+    showingEl.textContent = shown;
+    emptyEl.style.display = shown === 0 ? '' : 'none';
+  }
+
+  searchEl.addEventListener('input', applyFilters);
+  consEl.addEventListener('change', applyFilters);
+  typeEl.addEventListener('change', applyFilters);
+  statusEl.addEventListener('change', applyFilters);
+  validityEl.addEventListener('change', applyFilters);
+
+  applyBtn.addEventListener('click', function(e){ e.preventDefault(); applyFilters(); });
+
+  clearBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    searchEl.value = '';
+    consEl.value = '';
+    typeEl.value = '';
+    statusEl.value = '';
+    validityEl.value = '';
+    applyFilters();
+  });
+
+  for (var i = 0; i < viewBtns.length; i++) {
+    viewBtns[i].addEventListener('click', function(){
+      for (var k = 0; k < viewBtns.length; k++) {
+        viewBtns[k].classList.remove('active', 'btn-primary');
+        viewBtns[k].classList.add('btn-default');
+      }
+      this.classList.remove('btn-default');
+      this.classList.add('btn-primary', 'active');
+
+      currentView = this.getAttribute('data-view');
+      applyFilters();
+    });
+  }
+
+  applyFilters();
+})();
+</script>
+
+</body>
+
+</html>

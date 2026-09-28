@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Applications</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee applications user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Applications</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-default">
+            <i class="fa fa-download"></i> Export List
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        Review and manage applications for your franchise.
+      </div>
+
+      <h5 class="bold">Search and filter applications</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="app_search">Search</label>
+            <input type="text" class="form-control" id="app_search" placeholder="Applicant, ID or reference">
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="app_consultant">Consultant</label>
+            <select class="form-control" id="app_consultant">
+              <option value="">All consultants</option>
+              <option value="Maria Schwan">Maria Schwan</option>
+              <option value="Priya Naidoo">Priya Naidoo</option>
+              <option value="Neil Petersen">Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="app_stage">Pipeline Stage</label>
+            <select class="form-control" id="app_stage">
+              <option value="">All stages</option>
+              <option value="New Application">New Application</option>
+              <option value="Incomplete">Incomplete</option>
+              <option value="Affordability Check">Affordability Check</option>
+              <option value="Submitted to Banks">Submitted to Banks</option>
+              <option value="Approved">Approved</option>
+              <option value="Declined">Declined</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="app_status">Working Status</label>
+            <select class="form-control" id="app_status">
+              <option value="">All statuses</option>
+              <option value="Received">Received</option>
+              <option value="Consultant Review">Consultant Review</option>
+              <option value="Missing Information">Missing Information</option>
+              <option value="Review Required">Review Required</option>
+              <option value="Affordability in Progress">Affordability in Progress</option>
+              <option value="Affordability Checked — Qualifies">Affordability Checked — Qualifies</option>
+              <option value="Pre-Approval Ready">Pre-Approval Ready</option>
+              <option value="Stage 2 Preparation">Stage 2 Preparation</option>
+              <option value="Submitted to Head Office">Submitted to Head Office</option>
+              <option value="Returned for Correction">Returned for Correction</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="applications-filter-actions">
+              <button type="button" class="btn btn-default" id="app_more_filters">
+                <i class="fa fa-filter"></i> More Filters
+              </button>
+              <button type="button" class="btn btn-primary" id="app_apply">Apply Filters</button>
+              <button type="button" class="btn btn-default" id="app_clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="app_more_filters_panel" style="display:none;">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="app_attempt">Application Attempt</label>
+            <select class="form-control" id="app_attempt">
+              <option value="">Current or previous</option>
+              <option value="current">Current attempt</option>
+              <option value="previous">Previous attempt</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="app_deal_type">Deal Type</label>
+            <select class="form-control" id="app_deal_type">
+              <option value="">All types</option>
+              <option value="Individual">Individual</option>
+              <option value="Joint">Joint</option>
+              <option value="Multiple">Multiple</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="app_missing">Missing Info</label>
+            <select class="form-control" id="app_missing">
+              <option value="">Any</option>
+              <option value="yes">Has missing items</option>
+              <option value="no">No missing items</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="app_cert">Buyer's Certificate</label>
+            <select class="form-control" id="app_cert">
+              <option value="">Any</option>
+              <option value="active">Issued and Active</option>
+              <option value="expiring">Expiring Soon</option>
+              <option value="expired">Expired</option>
+              <option value="none">None issued</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="applications-filter-tags" id="app_filter_tags">
+        <span class="label label-default">Missing documents</span>
+        <span class="label label-default">Current attempts</span>
+        <span class="text-muted"><span id="app_count">24</span> applications</span>
+      </div>
+
+      <div class="applications-view-toggle text-right">
+        <div class="btn-group" id="app_view_toggle">
+          <button type="button" class="btn btn-default btn-sm" data-view="board">
+            <i class="fa fa-columns"></i> Board
+          </button>
+          <button type="button" class="btn btn-primary btn-sm active" data-view="list">
+            <i class="fa fa-list"></i> List
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card" data-stage="New Application">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">New Application</div>
+              <div class="applications-pipeline-count applications-stage-new">6</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card" data-stage="Incomplete">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Incomplete</div>
+              <div class="applications-pipeline-count applications-stage-incomplete">4</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card" data-stage="Affordability Check">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Affordability Check</div>
+              <div class="applications-pipeline-count applications-stage-affordability">7</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card" data-stage="Submitted to Banks">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Submitted to Banks</div>
+              <div class="applications-pipeline-count applications-stage-submitted">3</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card" data-stage="Approved">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Approved</div>
+              <div class="applications-pipeline-count applications-stage-approved">3</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6">
+          <a href="#" class="applications-pipeline-card" data-stage="Declined">
+            <div class="well well-sm text-center">
+              <div class="text-muted applications-pipeline-label">Declined</div>
+              <div class="applications-pipeline-count applications-stage-declined">1</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-muted applications-pipeline-note">
+        Working statuses explain the activity inside each stage and do not create extra pipeline columns.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s" id="app_list_view">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Application Records</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <span class="text-muted">
+            <input type="checkbox" id="app_select_all"> 0 selected
+          </span>
+          <button type="button" class="btn btn-default btn-sm" disabled id="app_link_deal">
+            <i class="fa fa-users"></i> Link to Joint Deal
+          </button>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped applications-table">
+          <thead>
+            <tr>
+              <th style="width:24px;"><input type="checkbox"></th>
+              <th>Applicant / Application</th>
+              <th>Consultant</th>
+              <th>Completeness</th>
+              <th>Experian</th>
+              <th>Affordability</th>
+              <th>Stage / Working Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="app_tbody">
+
+            <tr class="app-row"
+                data-stage="Incomplete"
+                data-status="Missing Information"
+                data-consultant="Maria Schwan"
+                data-type="Individual"
+                data-attempt="current"
+                data-missing="yes"
+                data-cert="none"
+                data-search="Thandi Mokoena APP-2026-1058 Maria Schwan 654">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Thandi Mokoena</strong><br>
+                <span class="text-muted">APP-2026-1058</span><br>
+                <small class="text-muted">Received 02 Sep 2026</small>
+              </td>
+              <td>Maria Schwan</td>
+              <td><span class="label label-warning">6 of 8</span></td>
+              <td>654</td>
+              <td><span class="text-muted">Not calculated</span></td>
+              <td>
+                <span class="label label-danger">Incomplete</span><br>
+                <small class="text-muted">Missing Information</small>
+              </td>
+              <td>
+                <a href="application_detail.html" class="btn btn-primary btn-xs">Open</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Affordability Check"
+                data-status="Affordability Checked — Qualifies"
+                data-consultant="Priya Naidoo"
+                data-type="Joint"
+                data-attempt="current"
+                data-missing="no"
+                data-cert="none"
+                data-search="Silubuso Dlamini APP-2026-1049 Priya Naidoo 642 JD-2026-0048">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Silubuso Dlamini</strong><br>
+                <span class="text-muted">APP-2026-1049</span><br>
+                <small class="text-muted">Received 01 Sep 2026</small><br>
+                <small class="text-info"><i class="fa fa-link"></i> Linked to JD-2026-0048</small>
+              </td>
+              <td>Priya Naidoo</td>
+              <td><span class="label label-success">Complete</span></td>
+              <td>642</td>
+              <td>R1,450,000</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Affordability Checked — Qualifies</small>
+              </td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-default btn-xs">View Deal</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Incomplete"
+                data-status="Review Required"
+                data-consultant="Neil Petersen"
+                data-type="Individual"
+                data-attempt="current"
+                data-missing="yes"
+                data-cert="expiring"
+                data-search="Aisha Daniels APP-2026-1038 Neil Petersen 671">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Aisha Daniels</strong><br>
+                <span class="text-muted">APP-2026-1038</span><br>
+                <small class="text-muted">Received 01 Sep 2026</small>
+              </td>
+              <td>Neil Petersen</td>
+              <td><span class="label label-warning">7 of 8</span></td>
+              <td>671</td>
+              <td><span class="text-muted">Review required</span></td>
+              <td>
+                <span class="label label-warning">Incomplete</span><br>
+                <small class="text-muted">Review Required</small>
+              </td>
+              <td>
+                <a href="application_detail.html" class="btn btn-primary btn-xs">Open</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Submitted to Banks"
+                data-status="Awaiting Bank Feedback"
+                data-consultant="Maria Schwan"
+                data-type="Individual"
+                data-attempt="current"
+                data-missing="no"
+                data-cert="active"
+                data-search="Mandla Khumalo APP-2026-1015 Maria Schwan 655">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Mandla Khumalo</strong><br>
+                <span class="text-muted">APP-2026-1015</span><br>
+                <small class="text-muted">Received 31 Aug 2026</small>
+              </td>
+              <td>Maria Schwan</td>
+              <td><span class="label label-success">Complete</span></td>
+              <td>655</td>
+              <td>R890,000</td>
+              <td>
+                <span class="label label-warning">Submitted to Banks</span><br>
+                <small class="text-muted">Awaiting Bank Feedback</small>
+              </td>
+              <td>
+                <a href="bond_application.html" class="btn btn-default btn-xs">View</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Approved"
+                data-status="Bond Accepted"
+                data-consultant="Maria Schwan"
+                data-type="Individual"
+                data-attempt="previous"
+                data-missing="no"
+                data-cert="expired"
+                data-search="Peter Jacobs APP-2026-1044 Maria Schwan 630 Attempt 2">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Peter Jacobs</strong><br>
+                <span class="text-muted">APP-2026-1044</span><br>
+                <small class="text-muted">Received 30 Aug 2026</small><br>
+                <small class="text-warning">Attempt 2</small>
+              </td>
+              <td>Maria Schwan</td>
+              <td><span class="label label-success">Complete</span></td>
+              <td>630</td>
+              <td>R720,000</td>
+              <td>
+                <span class="label label-success">Approved</span><br>
+                <small class="text-muted">Bond Accepted</small>
+              </td>
+              <td>
+                <a href="registration_overview.html" class="btn btn-default btn-xs">View</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Affordability Check"
+                data-status="Returned for Correction"
+                data-consultant="Priya Naidoo"
+                data-type="Individual"
+                data-attempt="current"
+                data-missing="yes"
+                data-cert="none"
+                data-search="Nandi Mafele APP-2026-1002 Priya Naidoo 688">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Nandi Mafele</strong><br>
+                <span class="text-muted">APP-2026-1002</span><br>
+                <small class="text-muted">Received 28 Aug 2026</small>
+              </td>
+              <td>Priya Naidoo</td>
+              <td><span class="label label-success">Complete</span></td>
+              <td>688</td>
+              <td>R980,000</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Returned for Correction</small>
+              </td>
+              <td>
+                <a href="application_detail.html" class="btn btn-primary btn-xs">Open</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Affordability Check"
+                data-status="Pre-Approval Ready"
+                data-consultant="Neil Petersen"
+                data-type="Joint"
+                data-attempt="current"
+                data-missing="no"
+                data-cert="active"
+                data-search="Khumalo Family Purchase JD-2026-0987 Neil Petersen 645">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Khumalo Family Purchase</strong><br>
+                <span class="text-muted">JD-2026-0987</span><br>
+                <small class="text-muted">Received 26 Aug 2026</small><br>
+                <small class="text-info"><i class="fa fa-link"></i> Joint Deal &middot; 4 applicants</small>
+              </td>
+              <td>Neil Petersen</td>
+              <td><span class="label label-success">Complete</span></td>
+              <td>645</td>
+              <td>R1,460,000</td>
+              <td>
+                <span class="label label-info">Affordability Check</span><br>
+                <small class="text-muted">Pre-Approval Ready</small>
+              </td>
+              <td>
+                <a href="joint_deal_detail.html" class="btn btn-default btn-xs">View Deal</a>
+              </td>
+            </tr>
+
+            <tr class="app-row"
+                data-stage="Declined"
+                data-status="Unsuccessful Outcome"
+                data-consultant="Priya Naidoo"
+                data-type="Joint"
+                data-attempt="current"
+                data-missing="no"
+                data-cert="none"
+                data-search="Masoko Property Deal JD-2026-0998 Priya Naidoo 598">
+              <td><input type="checkbox"></td>
+              <td>
+                <strong>Masoko Property Deal</strong><br>
+                <span class="text-muted">JD-2026-0998</span><br>
+                <small class="text-muted">Received 25 Aug 2026</small>
+              </td>
+              <td>Priya Naidoo</td>
+              <td><span class="label label-success">Complete</span></td>
+              <td>598</td>
+              <td>R85,000</td>
+              <td>
+                <span class="label label-danger">Declined</span><br>
+                <small class="text-muted">Unsuccessful Outcome</small>
+              </td>
+              <td>
+                <a href="unsuccessful_outcome.html" class="btn btn-default btn-xs">View Outcome</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="app_empty" class="text-muted text-center m-t-15" style="display:none;">
+        No applications match your filters.
+      </div>
+
+      <div class="row applications-pagination">
+        <div class="col-md-6">
+          <span class="text-muted">Showing <span id="app_showing">8</span> of 24</span>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">Previous</button>
+            <button type="button" class="btn btn-primary btn-sm active">1</button>
+            <button type="button" class="btn btn-default btn-sm">2</button>
+            <button type="button" class="btn btn-default btn-sm">3</button>
+            <button type="button" class="btn btn-default btn-sm">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s" id="app_board_view" style="display:none;">
+    <div class="panel-body">
+      <h5 class="bold">Application Board</h5>
+      <hr class="hr-panel-heading" />
+
+      <div class="applications-board">
+
+        <div class="applications-board-col" data-stage="New Application">
+          <div class="applications-board-col-header applications-stage-new">
+            <span>New Application</span>
+            <span class="applications-board-col-count">6</span>
+          </div>
+          <div class="applications-board-col-body">
+            <div class="applications-board-card" data-consultant="Maria Schwan">
+              <strong>Sipho Dlamini</strong>
+              <div class="text-muted">APP-2026-1102</div>
+              <div class="text-muted"><small>Received 06 Sep 2026</small></div>
+              <span class="label label-default">Received</span>
+            </div>
+            <div class="applications-board-card" data-consultant="Priya Naidoo">
+              <strong>Naledi Mokoena</strong>
+              <div class="text-muted">APP-2026-1101</div>
+              <div class="text-muted"><small>Received 06 Sep 2026</small></div>
+              <span class="label label-default">Received</span>
+            </div>
+            <div class="applications-board-card" data-consultant="Neil Petersen">
+              <strong>James Botha</strong>
+              <div class="text-muted">APP-2026-1098</div>
+              <div class="text-muted"><small>Received 05 Sep 2026</small></div>
+              <span class="label label-info">Consultant Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="applications-board-col" data-stage="Incomplete">
+          <div class="applications-board-col-header applications-stage-incomplete">
+            <span>Incomplete</span>
+            <span class="applications-board-col-count">4</span>
+          </div>
+          <div class="applications-board-col-body">
+            <div class="applications-board-card" data-consultant="Maria Schwan">
+              <strong>Thandi Mokoena</strong>
+              <div class="text-muted">APP-2026-1058</div>
+              <div class="text-muted"><small>Received 02 Sep 2026</small></div>
+              <span class="label label-warning">Missing Information</span>
+            </div>
+            <div class="applications-board-card" data-consultant="Neil Petersen">
+              <strong>Aisha Daniels</strong>
+              <div class="text-muted">APP-2026-1038</div>
+              <div class="text-muted"><small>Received 01 Sep 2026</small></div>
+              <span class="label label-info">Review Required</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="applications-board-col" data-stage="Affordability Check">
+          <div class="applications-board-col-header applications-stage-affordability">
+            <span>Affordability Check</span>
+            <span class="applications-board-col-count">7</span>
+          </div>
+          <div class="applications-board-col-body">
+            <div class="applications-board-card" data-consultant="Priya Naidoo">
+              <strong>Silubuso Dlamini</strong>
+              <div class="text-muted">APP-2026-1049</div>
+              <div class="text-muted"><small>Linked to JD-2026-0048</small></div>
+              <span class="label label-info">Affordability Checked — Qualifies</span>
+            </div>
+            <div class="applications-board-card" data-consultant="Priya Naidoo">
+              <strong>Nandi Mafele</strong>
+              <div class="text-muted">APP-2026-1002</div>
+              <div class="text-muted"><small>Received 28 Aug 2026</small></div>
+              <span class="label label-warning">Returned for Correction</span>
+            </div>
+            <div class="applications-board-card" data-consultant="Neil Petersen">
+              <strong>Khumalo Family Purchase</strong>
+              <div class="text-muted">JD-2026-0987</div>
+              <div class="text-muted"><small>Joint Deal &middot; 4 applicants</small></div>
+              <span class="label label-info">Pre-Approval Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="applications-board-col" data-stage="Submitted to Banks">
+          <div class="applications-board-col-header applications-stage-submitted">
+            <span>Submitted to Banks</span>
+            <span class="applications-board-col-count">3</span>
+          </div>
+          <div class="applications-board-col-body">
+            <div class="applications-board-card" data-consultant="Maria Schwan">
+              <strong>Mandla Khumalo</strong>
+              <div class="text-muted">APP-2026-1015</div>
+              <div class="text-muted"><small>Received 31 Aug 2026</small></div>
+              <span class="label label-warning">Awaiting Bank Feedback</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="applications-board-col" data-stage="Approved">
+          <div class="applications-board-col-header applications-stage-approved">
+            <span>Approved</span>
+            <span class="applications-board-col-count">3</span>
+          </div>
+          <div class="applications-board-col-body">
+            <div class="applications-board-card" data-consultant="Maria Schwan">
+              <strong>Peter Jacobs</strong>
+              <div class="text-muted">APP-2026-1044</div>
+              <div class="text-muted"><small>Attempt 2</small></div>
+              <span class="label label-success">Bond Accepted</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="applications-board-col" data-stage="Declined">
+          <div class="applications-board-col-header applications-stage-declined">
+            <span>Declined</span>
+            <span class="applications-board-col-count">1</span>
+          </div>
+          <div class="applications-board-col-body">
+            <div class="applications-board-card" data-consultant="Priya Naidoo">
+              <strong>Masoko Property Deal</strong>
+              <div class="text-muted">JD-2026-0998</div>
+              <div class="text-muted"><small>Received 25 Aug 2026</small></div>
+              <span class="label label-danger">Unsuccessful Outcome</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-info-circle text-info"></i> Application Rules</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="applications-rules-list">
+            <li>An individual applicant can have more than one application attempt.</li>
+            <li>ID or passport number identifies the person; each attempt keeps its own unique number.</li>
+            <li>Documents from an earlier attempt may be linked to the current application when permitted.</li>
+            <li>A genuine reapplication keeps the earlier attempt visible in history.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold"><i class="fa fa-users text-info"></i> Joint Deal Rules</h5>
+          <hr class="hr-panel-heading" />
+          <ul class="applications-rules-list">
+            <li>Only completed same-franchise applications can be linked into a deal.</li>
+            <li>Each applicant keeps their own application and document history.</li>
+            <li>The linked joint deal owns one transaction for combined affordability and submission.</li>
+            <li>A deal must contain between two and four linked applicants.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Only records belonging to your franchise are shown. Only the six approved pipeline stages appear as columns; working statuses describe activity inside a stage.
+  </div>
+
+</div></div></div>
+
+<style>
+.applications-filter-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.applications-filter-tags{margin-top:5px;margin-bottom:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+
+.applications-pipeline-card{display:block;text-decoration:none!important;color:inherit!important;}
+.applications-pipeline-card:hover .well{background:#f9fafb;}
+.applications-pipeline-card .well{margin-bottom:15px;background:#fff;transition:background .15s ease;}
+.applications-pipeline-label{font-size:12px;margin-bottom:8px;}
+.applications-pipeline-count{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;
+  font-weight:600;font-size:16px;color:#fff;
+}
+.applications-stage-new           {background:#1f2d3d;}
+.applications-stage-incomplete    {background:#2c8f9c;}
+.applications-stage-affordability {background:#2563eb;}
+.applications-stage-submitted     {background:#e08b1f;}
+.applications-stage-approved      {background:#1f9d55;}
+.applications-stage-declined      {background:#d92d20;}
+.applications-pipeline-note{margin-top:5px;font-size:12px;}
+
+.applications-table td{vertical-align:middle;}
+.applications-pagination{margin-top:10px;}
+
+.applications-rules-list{padding-left:18px;margin-bottom:0;font-size:13px;}
+.applications-rules-list li{margin-bottom:6px;}
+.applications-rules-list li:last-child{margin-bottom:0;}
+
+.applications-board{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+.applications-board-col{
+  flex:0 0 260px;
+  background:#f7f8fa;
+  border:1px solid #e6e9ee;
+  border-radius:6px;
+  display:flex;
+  flex-direction:column;
+}
+.applications-board-col-header{
+  padding:10px 12px;
+  color:#fff;
+  font-weight:600;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+}
+.applications-board-col-count{
+  background:rgba(255,255,255,.25);
+  border-radius:12px;
+  padding:1px 8px;
+  font-size:12px;
+}
+.applications-board-col-body{padding:10px;display:flex;flex-direction:column;gap:8px;}
+.applications-board-card{
+  background:#fff;
+  border:1px solid #e6e9ee;
+  border-radius:6px;
+  padding:10px;
+  font-size:13px;
+}
+.applications-board-card strong{display:block;margin-bottom:2px;}
+.applications-board-card .label{margin-top:6px;font-size:11px;}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .applications-filter-actions{flex-direction:column;}
+  .applications-filter-actions .btn{width:100%;}
+  .applications-board{flex-direction:column;}
+  .applications-board-col{flex:1 1 auto;}
+}
+</style>
+
+<script>
+(function(){
+  var rows          = document.querySelectorAll('.app-row');
+  var boardCols     = document.querySelectorAll('.applications-board-col');
+  var searchEl      = document.getElementById('app_search');
+  var consultant    = document.getElementById('app_consultant');
+  var stageEl       = document.getElementById('app_stage');
+  var statusEl      = document.getElementById('app_status');
+  var attemptEl     = document.getElementById('app_attempt');
+  var dealTypeEl    = document.getElementById('app_deal_type');
+  var missingEl     = document.getElementById('app_missing');
+  var certEl        = document.getElementById('app_cert');
+  var applyBtn      = document.getElementById('app_apply');
+  var clearBtn      = document.getElementById('app_clear');
+  var moreBtn       = document.getElementById('app_more_filters');
+  var morePanel     = document.getElementById('app_more_filters_panel');
+  var countEl       = document.getElementById('app_count');
+  var showingEl     = document.getElementById('app_showing');
+  var emptyEl       = document.getElementById('app_empty');
+  var listView      = document.getElementById('app_list_view');
+  var boardView     = document.getElementById('app_board_view');
+  var viewBtns      = document.querySelectorAll('#app_view_toggle button');
+  var pipelineCards = document.querySelectorAll('.applications-pipeline-card');
+
+  var currentView = 'list';
+
+  function matches(row){
+    var q  = (searchEl.value || '').toLowerCase().trim();
+    var c  = consultant.value;
+    var s  = stageEl.value;
+    var st = statusEl.value;
+    var at = attemptEl.value;
+    var dt = dealTypeEl.value;
+    var mi = missingEl.value;
+    var ce = certEl.value;
+
+    var rowSearch = (row.getAttribute('data-search') || '').toLowerCase();
+    var rowCons   = row.getAttribute('data-consultant') || '';
+    var rowStage  = row.getAttribute('data-stage') || '';
+    var rowStatus = row.getAttribute('data-status') || '';
+    var rowAtt    = row.getAttribute('data-attempt') || '';
+    var rowType   = row.getAttribute('data-type') || '';
+    var rowMiss   = row.getAttribute('data-missing') || '';
+    var rowCert   = row.getAttribute('data-cert') || '';
+
+    if (q  && rowSearch.indexOf(q) === -1) return false;
+    if (c  && rowCons !== c) return false;
+    if (s  && rowStage !== s) return false;
+    if (st && rowStatus !== st) return false;
+    if (at && rowAtt !== at) return false;
+    if (dt && rowType !== dt) return false;
+    if (mi && rowMiss !== mi) return false;
+    if (ce && rowCert !== ce) return false;
+    return true;
+  }
+
+  function applyFilters(){
+    var shown = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      if (matches(rows[i])) {
+        rows[i].style.display = '';
+        shown++;
+      } else {
+        rows[i].style.display = 'none';
+      }
+    }
+
+    countEl.textContent   = shown;
+    showingEl.textContent = shown;
+    emptyEl.style.display = shown === 0 ? '' : 'none';
+
+    for (var j = 0; j < boardCols.length; j++) {
+      var col = boardCols[j];
+      var colStage = col.getAttribute('data-stage');
+      var cons = consultant.value;
+      var visible = 0;
+      var cards = col.querySelectorAll('.applications-board-card');
+      for (var k = 0; k < cards.length; k++) {
+        var cardCons = cards[k].getAttribute('data-consultant') || '';
+        if ((!cons || cardCons === cons) && (!stageEl.value || stageEl.value === colStage)) {
+          cards[k].style.display = '';
+          visible++;
+        } else {
+          cards[k].style.display = 'none';
+        }
+      }
+      col.style.display = visible === 0 && (cons || stageEl.value) ? 'none' : '';
+    }
+  }
+
+  function resetFilters(){
+    searchEl.value = '';
+    consultant.value = '';
+    stageEl.value = '';
+    statusEl.value = '';
+    attemptEl.value = '';
+    dealTypeEl.value = '';
+    missingEl.value = '';
+    certEl.value = '';
+    applyFilters();
+  }
+
+  searchEl.addEventListener('input', applyFilters);
+  consultant.addEventListener('change', applyFilters);
+  stageEl.addEventListener('change', applyFilters);
+  statusEl.addEventListener('change', applyFilters);
+  attemptEl.addEventListener('change', applyFilters);
+  dealTypeEl.addEventListener('change', applyFilters);
+  missingEl.addEventListener('change', applyFilters);
+  certEl.addEventListener('change', applyFilters);
+
+  applyBtn.addEventListener('click', function(e){ e.preventDefault(); applyFilters(); });
+  clearBtn.addEventListener('click', function(e){ e.preventDefault(); resetFilters(); });
+
+  moreBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    morePanel.style.display = morePanel.style.display === 'none' ? '' : 'none';
+  });
+
+  for (var v = 0; v < viewBtns.length; v++) {
+    viewBtns[v].addEventListener('click', function(){
+      for (var x = 0; x < viewBtns.length; x++) {
+        viewBtns[x].classList.remove('active', 'btn-primary');
+        viewBtns[x].classList.add('btn-default');
+      }
+      this.classList.remove('btn-default');
+      this.classList.add('btn-primary', 'active');
+      currentView = this.getAttribute('data-view');
+      listView.style.display  = currentView === 'list'  ? '' : 'none';
+      boardView.style.display = currentView === 'board' ? '' : 'none';
+      applyFilters();
+    });
+  }
+
+  for (var p = 0; p < pipelineCards.length; p++) {
+    pipelineCards[p].addEventListener('click', function(e){
+      e.preventDefault();
+      stageEl.value = this.getAttribute('data-stage');
+      applyFilters();
+    });
+  }
+
+  applyFilters();
+})();
+</script>
+
+</body>
+
+</html>

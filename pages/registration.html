@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registration</title>
+
+    <link rel="stylesheet" type="text/css" id="reset-css" href="https://dev2.crmperfex.co.za/assets/css/reset.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="inter-font" href="https://dev2.crmperfex.co.za/assets/plugins/inter/inter.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="vendor-css" href="https://dev2.crmperfex.co.za/assets/builds/vendor-admin.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-css" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/fontawesome.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-brands" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/brands.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-solid" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/solid.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="fontawesome-regular" href="https://dev2.crmperfex.co.za/assets/plugins/font-awesome/css/regular.min.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="tailwind-css" href="https://dev2.crmperfex.co.za/assets/builds/tailwind.css?v=3.4.1" />
+    <link rel="stylesheet" type="text/css" id="app-css" href="https://dev2.crmperfex.co.za/assets/css/style.min.css?v=3.4.1" />
+</head>
+
+<body class="app admin h-full franchisee registration user-id-10 chrome">
+
+<div id="wrapper"><div class="content"><div class="row"><div class="col-md-12">
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="no-margin">Registration</h4>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="btn btn-default">
+            <i class="fa fa-download"></i> Export List
+          </a>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="alert alert-info">
+        <i class="fa fa-eye"></i>
+        <strong>View only.</strong> Head Office Sales Support manages registration updates. Lawyer details, follow-ups and registration status are read-only.
+      </div>
+
+      <h5 class="bold">Search and filter registrations</h5>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="reg_search">Search</label>
+            <input type="text" class="form-control" id="reg_search" placeholder="Applicant, deal, property or reference">
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label for="reg_consultant">Consultant</label>
+            <select class="form-control" id="reg_consultant">
+              <option value="">All consultants</option>
+              <option value="Maria Schwan">Maria Schwan</option>
+              <option value="Priya Naidoo">Priya Naidoo</option>
+              <option value="Neil Petersen">Neil Petersen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="reg_type">Record type</label>
+            <select class="form-control" id="reg_type">
+              <option value="">All record types</option>
+              <option value="Individual">Individual</option>
+              <option value="Joint Deal">Joint Deal</option>
+              <option value="Multiple Deal">Multiple Deal</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+          <div class="form-group">
+            <label for="reg_status">Status</label>
+            <select class="form-control" id="reg_status">
+              <option value="">All statuses</option>
+              <option value="Attorney Instructed">Attorney Instructed</option>
+              <option value="Documents in Preparation">Documents in Preparation</option>
+              <option value="Awaiting Guarantees">Awaiting Guarantees</option>
+              <option value="Ready to Lodge">Ready to Lodge</option>
+              <option value="Lodged">Lodged</option>
+              <option value="Registration in Progress">Registration in Progress</option>
+              <option value="Registered">Registered</option>
+              <option value="Bond Accepted">Bond Accepted</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <div class="registration-filter-actions">
+              <button type="button" class="btn btn-primary" id="reg_apply">Apply Filters</button>
+              <button type="button" class="btn btn-default" id="reg_clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-muted registration-result-count">
+        <span id="reg_count">12</span> records
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm registration-tile">
+        <i class="fa fa-folder-open registration-tile-icon registration-icon-blue"></i>
+        <div class="text-muted registration-tile-label">Active Registrations</div>
+        <div class="registration-tile-value">7</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm registration-tile">
+        <i class="fa fa-check-circle registration-tile-icon registration-icon-green"></i>
+        <div class="text-muted registration-tile-label">Bond Accepted</div>
+        <div class="registration-tile-value">2</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm registration-tile">
+        <i class="fa fa-file-text-o registration-tile-icon registration-icon-orange"></i>
+        <div class="text-muted registration-tile-label">Lodged</div>
+        <div class="registration-tile-value">3</div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="well well-sm registration-tile">
+        <i class="fa fa-home registration-tile-icon registration-icon-green"></i>
+        <div class="text-muted registration-tile-label">Registered</div>
+        <div class="registration-tile-value">5</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel_s">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="bold">Registration Records</h5>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group" id="reg_view_toggle">
+            <button type="button" class="btn btn-primary btn-sm active" data-view="active">Active</button>
+            <button type="button" class="btn btn-default btn-sm" data-view="history">History</button>
+          </div>
+        </div>
+      </div>
+      <hr class="hr-panel-heading" />
+
+      <div class="table-responsive">
+        <table class="table table-striped registration-table">
+          <thead>
+            <tr>
+              <th>Applicant / Deal</th>
+              <th>Type</th>
+              <th>Property</th>
+              <th>Bank / Bond</th>
+              <th>Conveyancing Lawyer</th>
+              <th>Registration Status</th>
+              <th>Next Follow-up</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="reg_tbody">
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Documents in Preparation"
+                data-search="Mandla Khumalo BA-2026-0068 18 Oak Avenue Belville Nedbank R890000 Adams Co Attorneys">
+              <td>
+                <strong>Mandla Khumalo</strong><br>
+                <span class="text-muted">BA-2026-0068</span>
+              </td>
+              <td>Individual</td>
+              <td>18 Oak Avenue, Belville</td>
+              <td>Nedbank &middot; R890,000</td>
+              <td>Adams &amp; Co Attorneys</td>
+              <td><span class="label label-info">Documents in Preparation</span></td>
+              <td>18 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Priya Naidoo"
+                data-status="Lodged"
+                data-search="Dlamini Property Purchase JD-2026-0048 42 Main Road Bellville ABSA R1150000 Smith Legal">
+              <td>
+                <strong>Dlamini Property Purchase</strong><br>
+                <span class="text-muted">JD-2026-0048</span>
+              </td>
+              <td>Joint Deal &middot; 2 applicants</td>
+              <td>42 Main Road, Bellville</td>
+              <td>ABSA &middot; R1,150,000</td>
+              <td>Smith Legal</td>
+              <td><span class="label label-warning">Lodged</span></td>
+              <td>16 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Neil Petersen"
+                data-status="Awaiting Guarantees"
+                data-search="Peter Jacobs BA-2026-0155 9 Protea Street Kulis River FNB R720000 Daniels Attorneys">
+              <td>
+                <strong>Peter Jacobs</strong><br>
+                <span class="text-muted">BA-2026-0155</span>
+              </td>
+              <td>Individual</td>
+              <td>9 Protea Street, Kulis River</td>
+              <td>FNB &middot; R720,000</td>
+              <td>Daniels Attorneys</td>
+              <td><span class="label label-default">Awaiting Guarantees</span></td>
+              <td>20 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="history"
+                data-type="Joint Deal"
+                data-consultant="Neil Petersen"
+                data-status="Registered"
+                data-search="Khumalo Family Purchase JD-2026-0987 7 Maritz Lane Paarl Standard Bank R1400000 Cape Conveyancers">
+              <td>
+                <strong>Khumalo Family Purchase</strong><br>
+                <span class="text-muted">JD-2026-0987</span>
+              </td>
+              <td>Joint Deal &middot; 4 applicants</td>
+              <td>7 Maritz Lane, Paarl</td>
+              <td>Standard Bank &middot; R1,400,000</td>
+              <td>Cape Conveyancers</td>
+              <td><span class="label label-success">Registered</span></td>
+              <td>Completed 04 Sep</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Priya Naidoo"
+                data-status="Bond Accepted"
+                data-search="Nandi Mafele BA-2026-0221 31 Pine Road Durbanville Nedbank R980000 Not yet recorded">
+              <td>
+                <strong>Nandi Mafele</strong><br>
+                <span class="text-muted">BA-2026-0221</span>
+              </td>
+              <td>Individual</td>
+              <td>31 Pine Road, Durbanville</td>
+              <td>Nedbank &middot; R980,000</td>
+              <td>Not yet recorded</td>
+              <td><span class="label label-info">Bond Accepted</span></td>
+              <td>Not scheduled</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Neil Petersen"
+                data-status="Documents in Preparation"
+                data-search="Aisha Daniels BA-2026-0133 22 Rose Street Cape Town FNB R1240000 Van Wyk Attorneys">
+              <td>
+                <strong>Aisha Daniels</strong><br>
+                <span class="text-muted">BA-2026-0133</span>
+              </td>
+              <td>Individual</td>
+              <td>22 Rose Street, Cape Town</td>
+              <td>FNB &middot; R1,240,000</td>
+              <td>Van Wyk Attorneys</td>
+              <td><span class="label label-info">Documents in Preparation</span></td>
+              <td>22 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="history"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Registered"
+                data-search="Thandi Mokoena BA-2026-0104 55 High Street Bellville Standard Bank R1420000 Louw Partners">
+              <td>
+                <strong>Thandi Mokoena</strong><br>
+                <span class="text-muted">BA-2026-0104</span>
+              </td>
+              <td>Individual</td>
+              <td>55 High Street, Bellville</td>
+              <td>Standard Bank &middot; R1,420,000</td>
+              <td>Louw &amp; Partners</td>
+              <td><span class="label label-success">Registered</span></td>
+              <td>Completed 02 Sep</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Maria Schwan"
+                data-status="Attorney Instructed"
+                data-search="Jacobs Family Home JD-2026-0144 No property selected FNB R720000 Adams Co Attorneys">
+              <td>
+                <strong>Jacobs Family Home</strong><br>
+                <span class="text-muted">JD-2026-0144</span>
+              </td>
+              <td>Joint Deal &middot; 3 applicants</td>
+              <td>No property selected</td>
+              <td>FNB &middot; R720,000</td>
+              <td>Adams &amp; Co Attorneys</td>
+              <td><span class="label label-info">Attorney Instructed</span></td>
+              <td>24 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Priya Naidoo"
+                data-status="Ready to Lodge"
+                data-search="Lerato Ndoli BA-2026-0117 12 Bay View Pretoria Nedbank R980000 Smit Attorneys">
+              <td>
+                <strong>Lerato Ndoli</strong><br>
+                <span class="text-muted">BA-2026-0117</span>
+              </td>
+              <td>Individual</td>
+              <td>12 Bay View, Pretoria</td>
+              <td>Nedbank &middot; R980,000</td>
+              <td>Smit Attorneys</td>
+              <td><span class="label label-warning">Ready to Lodge</span></td>
+              <td>19 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Joint Deal"
+                data-consultant="Neil Petersen"
+                data-status="Registration in Progress"
+                data-search="Daniels Joint Application JD-2026-0155 8 Sunninghill Johannesburg ABSA R1150000 Smith Legal">
+              <td>
+                <strong>Daniels Joint Application</strong><br>
+                <span class="text-muted">JD-2026-0155</span>
+              </td>
+              <td>Joint Deal &middot; 2 applicants</td>
+              <td>8 Sunninghill, Johannesburg</td>
+              <td>ABSA &middot; R1,150,000</td>
+              <td>Smith Legal</td>
+              <td><span class="label label-info">Registration in Progress</span></td>
+              <td>21 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="history"
+                data-type="Individual"
+                data-consultant="Priya Naidoo"
+                data-status="Registered"
+                data-search="Silubuso Dlamini BA-2026-0049 21 Ridge Road Durban Standard Bank R850000 Cape Conveyancers">
+              <td>
+                <strong>Silubuso Dlamini</strong><br>
+                <span class="text-muted">BA-2026-0049</span>
+              </td>
+              <td>Individual</td>
+              <td>21 Ridge Road, Durban</td>
+              <td>Standard Bank &middot; R850,000</td>
+              <td>Cape Conveyancers</td>
+              <td><span class="label label-success">Registered</span></td>
+              <td>Completed 30 Aug</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+            <tr class="reg-row"
+                data-view="active"
+                data-type="Individual"
+                data-consultant="Maria Schwan"
+                data-status="Lodged"
+                data-search="Mandla Khumalo BA-2026-0068 18 Oak Avenue Belville Nedbank R890000 Adams Co Attorneys">
+              <td>
+                <strong>Mandla Khumalo</strong><br>
+                <span class="text-muted">BA-2026-0068</span>
+              </td>
+              <td>Individual</td>
+              <td>18 Oak Avenue, Belville</td>
+              <td>Nedbank &middot; R890,000</td>
+              <td>Adams &amp; Co Attorneys</td>
+              <td><span class="label label-warning">Lodged</span></td>
+              <td>23 Sep 2026</td>
+              <td>
+                <a href="registration_detail.html" class="btn btn-default btn-xs">View Details</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row registration-pagination">
+        <div class="col-md-6">
+          <span class="text-muted">Showing <span id="reg_showing">7</span> of 12</span>
+        </div>
+        <div class="col-md-6 text-right">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm">Previous</button>
+            <button type="button" class="btn btn-primary btn-sm active">1</button>
+            <button type="button" class="btn btn-default btn-sm">2</button>
+            <button type="button" class="btn btn-default btn-sm">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="reg_empty" class="text-muted text-center m-t-15" style="display:none;">
+        No registrations match your filters.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Latest Registration Update</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="registration-update">
+            <div class="registration-update-icon"><i class="fa fa-bullhorn"></i></div>
+            <div>
+              <p class="m-b-5">
+                Dlamini Property Purchase was lodged at the Deeds Office.
+              </p>
+              <div class="text-muted">
+                <small>
+                  Updated by Head Office Sales Support &middot; 02 Sep 2026
+                  &middot; Next follow-up: 16 Sep 2026
+                </small>
+              </div>
+              <div class="m-t-10">
+                <a href="registration_detail.html" class="btn btn-default btn-sm">
+                  <i class="fa fa-eye"></i> View Record
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel_s">
+        <div class="panel-body">
+          <h5 class="bold">Linked Support</h5>
+          <hr class="hr-panel-heading" />
+
+          <div class="registration-support">
+            <div class="registration-support-icon"><i class="fa fa-headphones"></i></div>
+            <div>
+              <p class="m-b-5">Ticket status: <strong>No open ticket</strong></p>
+              <p class="text-muted m-b-5">
+                Use a linked support ticket for questions about a registration.
+              </p>
+              <a href="support_tickets.html" class="btn btn-default btn-sm">
+                <i class="fa fa-life-ring"></i> Create Support Ticket
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="well well-sm">
+    <i class="fa fa-info-circle"></i>
+    Lawyer details, follow-ups and registration statuses are read-only. Head Office follows up every two weeks while registration remains active. Registered marks process completion and notifies the franchisee.
+  </div>
+
+</div></div></div>
+
+<style>
+.registration-filter-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.registration-result-count{margin-top:5px;}
+
+.registration-tile{margin-bottom:15px;}
+.registration-tile-icon{font-size:20px;margin-bottom:6px;display:block;}
+.registration-icon-blue{color:#2563eb;}
+.registration-icon-green{color:#1f9d55;}
+.registration-icon-orange{color:#e08b1f;}
+.registration-tile-label{font-size:12px;margin-bottom:4px;}
+.registration-tile-value{font-size:26px;font-weight:600;color:#111827;}
+
+.registration-table td{vertical-align:middle;}
+.registration-pagination{margin-top:10px;}
+
+.registration-update,
+.registration-support{display:flex;gap:12px;align-items:flex-start;}
+.registration-update-icon,
+.registration-support-icon{
+  width:38px;height:38px;border-radius:50%;
+  background:#f2f4f7;color:#2f5d80;
+  display:flex;align-items:center;justify-content:center;flex:0 0 38px;
+}
+
+#wrapper .content .panel_s{overflow:hidden;}
+#wrapper .content .panel_s .panel-body{overflow-x:auto;max-width:100%;}
+
+@media (max-width:767px){
+  .registration-filter-actions{flex-direction:column;}
+  .registration-filter-actions .btn{width:100%;}
+  .registration-tile-value{font-size:22px;}
+}
+</style>
+
+<script>
+(function(){
+  var rows       = document.querySelectorAll('.reg-row');
+  var searchEl   = document.getElementById('reg_search');
+  var consultant = document.getElementById('reg_consultant');
+  var typeEl     = document.getElementById('reg_type');
+  var statusEl   = document.getElementById('reg_status');
+  var applyBtn   = document.getElementById('reg_apply');
+  var clearBtn   = document.getElementById('reg_clear');
+  var countEl    = document.getElementById('reg_count');
+  var showingEl  = document.getElementById('reg_showing');
+  var emptyEl    = document.getElementById('reg_empty');
+  var viewBtns   = document.querySelectorAll('#reg_view_toggle button');
+
+  var currentView = 'active';
+
+  function applyFilters(){
+    var q  = (searchEl.value || '').toLowerCase().trim();
+    var c  = consultant.value;
+    var t  = typeEl.value;
+    var s  = statusEl.value;
+    var shown = 0;
+
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var rowSearch = (row.getAttribute('data-search') || '').toLowerCase();
+      var rowType   = row.getAttribute('data-type') || '';
+      var rowCons   = row.getAttribute('data-consultant') || '';
+      var rowStat   = row.getAttribute('data-status') || '';
+      var rowView   = row.getAttribute('data-view') || '';
+
+      var okView   = (rowView === currentView);
+      var okSearch = (!q || rowSearch.indexOf(q) > -1);
+      var okCons   = (!c || rowCons === c);
+      var okType   = (!t || rowType === t);
+      var okStatus = (!s || rowStat === s);
+
+      if (okView && okSearch && okCons && okType && okStatus) {
+        row.style.display = '';
+        shown++;
+      } else {
+        row.style.display = 'none';
+      }
+    }
+
+    countEl.textContent   = shown;
+    showingEl.textContent = shown;
+    emptyEl.style.display = shown === 0 ? '' : 'none';
+  }
+
+  function applyFiltersLive(){
+    applyFilters();
+  }
+
+  searchEl.addEventListener('input', applyFiltersLive);
+  consultant.addEventListener('change', applyFiltersLive);
+  typeEl.addEventListener('change', applyFiltersLive);
+  statusEl.addEventListener('change', applyFiltersLive);
+
+  applyBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    applyFilters();
+  });
+
+  clearBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    searchEl.value = '';
+    consultant.value = '';
+    typeEl.value = '';
+    statusEl.value = '';
+    applyFilters();
+  });
+
+  for (var i = 0; i < viewBtns.length; i++) {
+    viewBtns[i].addEventListener('click', function(){
+      for (var k = 0; k < viewBtns.length; k++) {
+        viewBtns[k].classList.remove('active', 'btn-primary');
+        viewBtns[k].classList.add('btn-default');
+      }
+      this.classList.remove('btn-default');
+      this.classList.add('btn-primary', 'active');
+
+      currentView = this.getAttribute('data-view');
+      applyFilters();
+    });
+  }
+
+  applyFilters();
+})();
+</script>
+
+</body>
+
+</html>
